@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
+		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
+		4AD2A93326D0B88D00126756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A93226D0B88D00126756 /* Assets.xcassets */; };
+		4AD2A93626D0B88D00126756 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A93526D0B88D00126756 /* Preview Assets.xcassets */; };
+		4AD2A93B26D0B88D00126756 /* Poketch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4AD2A93A26D0B88D00126756 /* Poketch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4AD2A94026D0B89000126756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A93F26D0B89000126756 /* Assets.xcassets */; };
+		4AD2A94726D0B89000126756 /* Poketch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4AD2A94626D0B89000126756 /* Poketch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A94B26D0B89000126756 /* ContentView.swift */; };
+		4AD2A94E26D0B89000126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A94D26D0B89000126756 /* PoketchApp.swift */; };
+		4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A94F26D0B89000126756 /* ComplicationController.swift */; };
+		4AD2A95226D0B89200126756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A95126D0B89200126756 /* Assets.xcassets */; };
+		4AD2A95526D0B89200126756 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A95426D0B89200126756 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AD2A93C26D0B88D00126756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AD2A92326D0B88600126756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AD2A93926D0B88D00126756;
+			remoteInfo = "Poketch WatchKit App";
+		};
+		4AD2A94826D0B89000126756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AD2A92326D0B88600126756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AD2A94526D0B89000126756;
+			remoteInfo = "Poketch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4AD2A95C26D0B89200126756 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4AD2A94726D0B89000126756 /* Poketch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AD2A96026D0B89200126756 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4AD2A93B26D0B88D00126756 /* Poketch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4AD2A92B26D0B88700126756 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD2A92E26D0B88700126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
+		4AD2A93026D0B88700126756 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AD2A93226D0B88D00126756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AD2A93526D0B88D00126756 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AD2A93726D0B88D00126756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AD2A93A26D0B88D00126756 /* Poketch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poketch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD2A93F26D0B89000126756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AD2A94126D0B89000126756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AD2A94626D0B89000126756 /* Poketch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Poketch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD2A94B26D0B89000126756 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AD2A94D26D0B89000126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
+		4AD2A94F26D0B89000126756 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		4AD2A95126D0B89200126756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AD2A95426D0B89200126756 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AD2A95626D0B89200126756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AD2A92826D0B88700126756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AD2A94326D0B89000126756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AD2A92226D0B88600126756 = {
+			isa = PBXGroup;
+			children = (
+				4AD2A92D26D0B88700126756 /* Poketch */,
+				4AD2A93E26D0B88D00126756 /* Poketch WatchKit App */,
+				4AD2A94A26D0B89000126756 /* Poketch WatchKit Extension */,
+				4AD2A92C26D0B88700126756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AD2A92C26D0B88700126756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2A92B26D0B88700126756 /* Poketch.app */,
+				4AD2A93A26D0B88D00126756 /* Poketch WatchKit App.app */,
+				4AD2A94626D0B89000126756 /* Poketch WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AD2A92D26D0B88700126756 /* Poketch */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2A92E26D0B88700126756 /* PoketchApp.swift */,
+				4AD2A93026D0B88700126756 /* ContentView.swift */,
+				4AD2A93226D0B88D00126756 /* Assets.xcassets */,
+				4AD2A93726D0B88D00126756 /* Info.plist */,
+				4AD2A93426D0B88D00126756 /* Preview Content */,
+			);
+			path = Poketch;
+			sourceTree = "<group>";
+		};
+		4AD2A93426D0B88D00126756 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2A93526D0B88D00126756 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AD2A93E26D0B88D00126756 /* Poketch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2A93F26D0B89000126756 /* Assets.xcassets */,
+				4AD2A94126D0B89000126756 /* Info.plist */,
+			);
+			path = "Poketch WatchKit App";
+			sourceTree = "<group>";
+		};
+		4AD2A94A26D0B89000126756 /* Poketch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2A94B26D0B89000126756 /* ContentView.swift */,
+				4AD2A94D26D0B89000126756 /* PoketchApp.swift */,
+				4AD2A94F26D0B89000126756 /* ComplicationController.swift */,
+				4AD2A95126D0B89200126756 /* Assets.xcassets */,
+				4AD2A95626D0B89200126756 /* Info.plist */,
+				4AD2A95326D0B89200126756 /* Preview Content */,
+			);
+			path = "Poketch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		4AD2A95326D0B89200126756 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AD2A95426D0B89200126756 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AD2A92A26D0B88700126756 /* Poketch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AD2A96126D0B89200126756 /* Build configuration list for PBXNativeTarget "Poketch" */;
+			buildPhases = (
+				4AD2A92726D0B88700126756 /* Sources */,
+				4AD2A92826D0B88700126756 /* Frameworks */,
+				4AD2A92926D0B88700126756 /* Resources */,
+				4AD2A96026D0B89200126756 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AD2A93D26D0B88D00126756 /* PBXTargetDependency */,
+			);
+			name = Poketch;
+			productName = Poketch;
+			productReference = 4AD2A92B26D0B88700126756 /* Poketch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4AD2A93926D0B88D00126756 /* Poketch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AD2A95D26D0B89200126756 /* Build configuration list for PBXNativeTarget "Poketch WatchKit App" */;
+			buildPhases = (
+				4AD2A93826D0B88D00126756 /* Resources */,
+				4AD2A95C26D0B89200126756 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AD2A94926D0B89000126756 /* PBXTargetDependency */,
+			);
+			name = "Poketch WatchKit App";
+			productName = "Poketch WatchKit App";
+			productReference = 4AD2A93A26D0B88D00126756 /* Poketch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		4AD2A94526D0B89000126756 /* Poketch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AD2A95926D0B89200126756 /* Build configuration list for PBXNativeTarget "Poketch WatchKit Extension" */;
+			buildPhases = (
+				4AD2A94226D0B89000126756 /* Sources */,
+				4AD2A94326D0B89000126756 /* Frameworks */,
+				4AD2A94426D0B89000126756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Poketch WatchKit Extension";
+			productName = "Poketch WatchKit Extension";
+			productReference = 4AD2A94626D0B89000126756 /* Poketch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AD2A92326D0B88600126756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					4AD2A92A26D0B88700126756 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					4AD2A93926D0B88D00126756 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					4AD2A94526D0B89000126756 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 4AD2A92626D0B88600126756 /* Build configuration list for PBXProject "Poketch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AD2A92226D0B88600126756;
+			productRefGroup = 4AD2A92C26D0B88700126756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AD2A92A26D0B88700126756 /* Poketch */,
+				4AD2A93926D0B88D00126756 /* Poketch WatchKit App */,
+				4AD2A94526D0B89000126756 /* Poketch WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AD2A92926D0B88700126756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AD2A93626D0B88D00126756 /* Preview Assets.xcassets in Resources */,
+				4AD2A93326D0B88D00126756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AD2A93826D0B88D00126756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AD2A94026D0B89000126756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AD2A94426D0B89000126756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AD2A95526D0B89200126756 /* Preview Assets.xcassets in Resources */,
+				4AD2A95226D0B89200126756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AD2A92726D0B88700126756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AD2A93126D0B88700126756 /* ContentView.swift in Sources */,
+				4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AD2A94226D0B89000126756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AD2A94E26D0B89000126756 /* PoketchApp.swift in Sources */,
+				4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */,
+				4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AD2A93D26D0B88D00126756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AD2A93926D0B88D00126756 /* Poketch WatchKit App */;
+			targetProxy = 4AD2A93C26D0B88D00126756 /* PBXContainerItemProxy */;
+		};
+		4AD2A94926D0B89000126756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AD2A94526D0B89000126756 /* Poketch WatchKit Extension */;
+			targetProxy = 4AD2A94826D0B89000126756 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4AD2A95726D0B89200126756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AD2A95826D0B89200126756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4AD2A95A26D0B89200126756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Poketch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4QHN4728NU;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Poketch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		4AD2A95B26D0B89200126756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Poketch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4QHN4728NU;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Poketch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		4AD2A95E26D0B89200126756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QHN4728NU;
+				IBSC_MODULE = Poketch_WatchKit_Extension;
+				INFOPLIST_FILE = "Poketch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		4AD2A95F26D0B89200126756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QHN4728NU;
+				IBSC_MODULE = Poketch_WatchKit_Extension;
+				INFOPLIST_FILE = "Poketch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		4AD2A96226D0B89200126756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Poketch/Preview Content\"";
+				DEVELOPMENT_TEAM = 4QHN4728NU;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Poketch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AD2A96326D0B89200126756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Poketch/Preview Content\"";
+				DEVELOPMENT_TEAM = 4QHN4728NU;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Poketch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AD2A92626D0B88600126756 /* Build configuration list for PBXProject "Poketch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AD2A95726D0B89200126756 /* Debug */,
+				4AD2A95826D0B89200126756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AD2A95926D0B89200126756 /* Build configuration list for PBXNativeTarget "Poketch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AD2A95A26D0B89200126756 /* Debug */,
+				4AD2A95B26D0B89200126756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AD2A95D26D0B89200126756 /* Build configuration list for PBXNativeTarget "Poketch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AD2A95E26D0B89200126756 /* Debug */,
+				4AD2A95F26D0B89200126756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AD2A96126D0B89200126756 /* Build configuration list for PBXNativeTarget "Poketch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AD2A96226D0B89200126756 /* Debug */,
+				4AD2A96326D0B89200126756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AD2A92326D0B88600126756 /* Project object */;
+}
