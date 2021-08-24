@@ -1,6 +1,6 @@
 //
 //  SpaceView.swift
-//  Etch WatchKit Extension
+//  Poketch WatchKit Extension
 //
 //  Created by Idrees Hassan on 8/20/21.
 //

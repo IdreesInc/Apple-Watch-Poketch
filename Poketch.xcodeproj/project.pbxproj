@@ -21,7 +21,7 @@
 		4AD2A95526D0B89200126756 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A95426D0B89200126756 /* Preview Assets.xcassets */; };
 		4AD2A96726D0B9AC00126756 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A96426D0B9AC00126756 /* GameView.swift */; };
 		4AD2A96826D0B9AC00126756 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A96526D0B9AC00126756 /* SpaceView.swift */; };
-		4AD2A96926D0B9AC00126756 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A96626D0B9AC00126756 /* TimeView.swift */; };
+		4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		4AD2A95626D0B89200126756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD2A96426D0B9AC00126756 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4AD2A96526D0B9AC00126756 /* SpaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
-		4AD2A96626D0B9AC00126756 /* TimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalWatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 			children = (
 				4AD2A96426D0B9AC00126756 /* GameView.swift */,
 				4AD2A96526D0B9AC00126756 /* SpaceView.swift */,
-				4AD2A96626D0B9AC00126756 /* TimeView.swift */,
+				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
 				4AD2A94B26D0B89000126756 /* ContentView.swift */,
 				4AD2A94D26D0B89000126756 /* PoketchApp.swift */,
 				4AD2A94F26D0B89000126756 /* ComplicationController.swift */,
@@ -323,7 +323,7 @@
 				4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */,
 				4AD2A96726D0B9AC00126756 /* GameView.swift in Sources */,
 				4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */,
-				4AD2A96926D0B9AC00126756 /* TimeView.swift in Sources */,
+				4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

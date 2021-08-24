@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Etch WatchKit Extension
+//  Poketch WatchKit Extension
 //
 //  Created by Idrees Hassan on 8/20/21.
 //
@@ -10,9 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            GameView()
-            TimeView()
-            SpaceView()
+            DigitalWatch()
         }
         .tabViewStyle(PageTabViewStyle())
     }
