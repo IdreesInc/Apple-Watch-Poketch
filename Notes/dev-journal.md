@@ -1,0 +1,6 @@
+# Dev Journal
+
+## Thursday August 26th, 2021
+
+- Finally got the bloody full screen presentation working. I've spent ages trying to get the SwiftUI view to take up the full screen but I couldn't find any resources describing how. I only found some people saying to click the Storyboard toggle for full screen, which doesn't help in this case because I am using SwiftUI. Some were saying that only SpriteKit and SceneKit views can be set to full screen but even using those I couldn't get ignoresSafeArea(.all) to work. Eventually I found [this](https://developer.apple.com/forums/thread/656562) forum post which finally gave me the function I needed (navigationBarHidden(true)). I swear it is almost impossible to find external info related to SwiftUI on watchOS. I wonder if that's because nobody develops watchOS apps anymore or because SwiftUI is both new and unfinished?
+- On another note, the newish (new for me at least) Xcode preview thing is great! The problem is that SpriteKit scenes aren't available in the preview, so for now I am trying to get everything working with all the other SwiftUI tools available. Honestly this is probably a blessing in disguise since it is taking me out of my comfort zone (sprite and canvas-like drawing) and forcing me to learn how to use the proper tools.

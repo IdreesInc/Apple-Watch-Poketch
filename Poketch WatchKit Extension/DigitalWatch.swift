@@ -20,7 +20,7 @@ struct DigitalWatch: View {
 
     var body: some View {
         ZStack {
-            Color(red: 0.44, green: 0.69, blue: 0.44).edgesIgnoringSafeArea(.all)
+            Color(red: 0.44, green: 0.69, blue: 0.44)
             HStack {
                 Image("digit-" + digitOne).resizable().aspectRatio(contentMode: .fit).frame(width: width)
                 Image("digit-" + digitTwo).resizable().aspectRatio(contentMode: .fit).frame(width: width)

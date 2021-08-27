@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            DigitalWatch()
-        }
-        .tabViewStyle(PageTabViewStyle())
+//        TabView {
+//            DigitalWatch()
+//        }
+//        .tabViewStyle(PageTabViewStyle())
+        DigitalWatch().ignoresSafeArea(.all).navigationBarHidden(true)
     }
 }
 
