@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DigitalWatch: View {
     
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
+    
     @State var digitOne = "1"
     @State var digitTwo = "0"
     @State var digitColon = "colon"
@@ -17,18 +19,20 @@ struct DigitalWatch: View {
     
     let width = CGFloat(32)
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
+    let COLOR_A = Color(red: 0.31, green: 0.51, blue: 0.32);
+    let COLOR_B = Color(red: 0.22, green: 0.32, blue: 0.19);
+    
     var body: some View {
         ZStack {
             Color(red: 0.44, green: 0.69, blue: 0.44)
             HStack (spacing: 0) {
-                Image("digit-" + digitOne).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width)
-                Image("digit-" + digitTwo).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width)
-                Image(digitColon).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width / 2.5)
-                Image("digit-" + digitThree).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width)
-                Image("digit-" + digitFour).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width)
+                Image("digit-" + digitOne).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(COLOR_B)
+                Image("digit-" + digitTwo).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(COLOR_B)
+                Image(digitColon).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width / 2.5).foregroundColor(COLOR_B)
+                Image("digit-" + digitThree).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(COLOR_B)
+                Image("digit-" + digitFour).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(COLOR_B)
             }.onReceive(timer) { _ in
-                self.digitColon = self.digitColon == "colon" ? "colon-blank" : "colon"
+                self.digitColon = self.digitColon == "colon" && !isLuminanceReduced ? "colon-blank" : "colon"
                 let date = Date()
                 let calendar = Calendar.current
                 var hour = String(calendar.component(.hour, from: date))
@@ -47,7 +51,10 @@ struct DigitalWatch: View {
             VStack {
                 Spacer()
                 HStack (alignment: .bottom, spacing: 0) {
-                    Image("mouse").interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38)
+                    ZStack {
+                        Image("mouse-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(COLOR_A)
+                        Image("mouse-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(COLOR_B)
+                    }
                     Image("line").interpolation(.none).resizable().frame(height: 38)
                 }
             }
@@ -60,6 +67,9 @@ struct DigitalWatch_Previews: PreviewProvider {
         Group {
             DigitalWatch()
                 .previewDevice("Apple Watch Series 6 - 40mm")
+            DigitalWatch()
+                .environment(\.isLuminanceReduced, true)
+                .environment(\.redactionReasons, [.privacy])
         }
     }
 }
