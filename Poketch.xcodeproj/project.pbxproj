@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8ED26E6717700D6EB3A /* Theme.swift */; };
 		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
 		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
 		4AD2A93326D0B88D00126756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A93226D0B88D00126756 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A48F8ED26E6717700D6EB3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4AD2A92B26D0B88700126756 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD2A92E26D0B88700126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
 		4AD2A93026D0B88700126756 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
 				4AD2A94B26D0B89000126756 /* ContentView.swift */,
 				4AD2A94D26D0B89000126756 /* PoketchApp.swift */,
+				4A48F8ED26E6717700D6EB3A /* Theme.swift */,
 				4AD2A94F26D0B89000126756 /* ComplicationController.swift */,
 				4AD2A95126D0B89200126756 /* Assets.xcassets */,
 				4AD2A95626D0B89200126756 /* Info.plist */,
@@ -314,6 +317,7 @@
 			files = (
 				4AD2A94E26D0B89000126756 /* PoketchApp.swift in Sources */,
 				4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */,
+				4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */,
 				4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */,
 				4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */,
 			);

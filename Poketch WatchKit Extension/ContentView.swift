@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var theme = Theme()
+    
     var body: some View {
 //        TabView {
 //            DigitalWatch()
 //        }
 //        .tabViewStyle(PageTabViewStyle())
-        DigitalWatch().ignoresSafeArea(.all).navigationBarHidden(true)
+        DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)
     }
 }
 

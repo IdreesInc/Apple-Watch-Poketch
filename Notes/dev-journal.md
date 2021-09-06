@@ -1,5 +1,10 @@
 # Dev Journal
 
+## Monday September 6th, 2021
+
+- Added the glow when pressed feature to the Digital Watch, akin to "Indiglo" on Timex watches (which feature I loved as a kid).
+- Had some problems getting EnvironmentObjects to work without crashing my Preview. Even when making sure to initialize the objects in each view, it'd cause Preview to crash with weird errors. Instead I used ObservableObjects to keep the theme colors shared between views for when the Kecleon Color Changer app is added.
+
 ## Saturday September 4th, 2021
 
 - Screenshotted 108 different Poketch states for reference using the MelonDS emulator (which is by far the best DS emulator out there). Noticed an easter egg with the Stopwatch where the Voltorb explodes if you keep the button held down long enough. Decided to update the Poketch [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9tch) page with this info since it wasn't mentioned anywhere.
