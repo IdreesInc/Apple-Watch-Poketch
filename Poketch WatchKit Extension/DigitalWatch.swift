@@ -11,18 +11,19 @@ struct DigitalWatch: View {
     
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let width = CGFloat(32)
+    
+    @ObservedObject var theme: Theme
+    
     @State var digitOne = "1"
     @State var digitTwo = "0"
     @State var digitColon = "colon"
     @State var digitThree = "2"
     @State var digitFour = "1"
     @State var glowing = false
-    
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let width = CGFloat(32)
-    
-    @ObservedObject var theme: Theme
-    
+    @State var lastTime = 0
+        
     init(theme: Theme) {
         self.theme = theme
     }
@@ -52,6 +53,9 @@ struct DigitalWatch: View {
                 digitTwo = String(hour.suffix(1))
                 digitThree = String(minutes.prefix(1))
                 digitFour = String(minutes.suffix(1))
+                if (glowing && Int(Date().timeIntervalSince1970) - lastTime > 3) {
+                    glowing = false
+                }
             }
             VStack {
                 Spacer()
@@ -67,6 +71,7 @@ struct DigitalWatch: View {
             DragGesture(minimumDistance: 0)
                 .onChanged({ (touch) in
                     glowing = true
+                    lastTime = Int(Date().timeIntervalSince1970)
                 })
                 .onEnded({ (touch) in
                     glowing = false
