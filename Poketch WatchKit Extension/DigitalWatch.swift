@@ -30,13 +30,13 @@ struct DigitalWatch: View {
     
     var body: some View {
         ZStack {
-            glowing ? theme.backgroundColorGlow : theme.backgroundColor
+            glowing ? theme.colorAGlow : theme.colorA
             HStack (spacing: 0) {
-                Image("digit-" + digitOne).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
-                Image("digit-" + digitTwo).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
-                Image(digitColon).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width / 2.5).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
-                Image("digit-" + digitThree).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
-                Image("digit-" + digitFour).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                Image("digit-" + digitOne).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                Image("digit-" + digitTwo).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                Image(digitColon).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width / 2.5).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                Image("digit-" + digitThree).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                Image("digit-" + digitFour).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
             }.onReceive(timer) { _ in
                 self.digitColon = self.digitColon == "colon" && !isLuminanceReduced ? "colon-blank" : "colon"
                 let date = Date()
@@ -61,10 +61,10 @@ struct DigitalWatch: View {
                 Spacer()
                 HStack (alignment: .bottom, spacing: 0) {
                     ZStack {
-                        Image("mouse-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(glowing ? theme.colorAGlow : theme.colorA)
                         Image("mouse-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                        Image("mouse-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
                     }
-                    Image("line").renderingMode(.template).interpolation(.none).resizable().frame(height: 38).foregroundColor(glowing ? theme.colorAGlow : theme.colorA)
+                    Image("digital-watch-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 38).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
                 }
             }
         }.gesture(

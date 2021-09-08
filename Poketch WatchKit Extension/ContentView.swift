@@ -11,10 +11,6 @@ struct ContentView: View {
     @StateObject var theme = Theme()
     
     var body: some View {
-//        TabView {
-//            DigitalWatch()
-//        }
-//        .tabViewStyle(PageTabViewStyle())
         DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)
     }
 }
