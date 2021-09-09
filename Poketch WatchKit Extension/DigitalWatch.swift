@@ -11,9 +11,6 @@ struct DigitalWatch: View {
     
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let width = CGFloat(32)
-    
     @ObservedObject var theme: Theme
     
     @State var digitOne = "1"
@@ -23,6 +20,9 @@ struct DigitalWatch: View {
     @State var digitFour = "1"
     @State var glowing = false
     @State var lastTime = 0
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let width = 32.0
         
     init(theme: Theme) {
         self.theme = theme
@@ -82,6 +82,6 @@ struct DigitalWatch: View {
 
 struct DigitalWatch_Previews: PreviewProvider {
     static var previews: some View {
-        DigitalWatch(theme: Theme()).previewDevice("Apple Watch Series 6 - 40mm")
+        DigitalWatch(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
     }
 }

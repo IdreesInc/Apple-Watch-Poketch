@@ -1,5 +1,17 @@
 # Dev Journal
 
+## Thursday September 9th, 2021
+
+- Continuing work on the coin toss app. Using SwiftUI animations I can emulate the coin animation pretty well.
+- Getting the timings right for the coin bounces was a matter of recording my game screen and watching it back frame by frame. It is still just an estimate, but it is a pretty accurate one at least.
+- One funny problem I had was trying to figure out which side of the coin is meant to be heads or tails. Using the Pokemon anime as reference (Season 10, Episode 46) I figured out that the pokeball is meant to be tails. Wouldn't have guessed that.
+
+## Wednesday September 8th, 2021
+
+- Started on the coin toss app. I know it's not in order, but I figured I would start with the least complex apps and go from there so that I could make as many apps as possible in case I run out of time.
+- Currently trying to figure out how to do translation animations in SwiftUI. The goal would be to implement the coin "toss" and "flipping" using animations rather than a timer that increments the offset manually, though I'll do that if I have to.
+- 
+
 ## Monday September 6th, 2021
 
 - Added the glow when pressed feature to the Digital Watch, akin to "Indiglo" on Timex watches (which feature I loved as a kid).
