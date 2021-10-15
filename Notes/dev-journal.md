@@ -1,8 +1,33 @@
 # Dev Journal
 
+## Thursday October 14th, 2021
+
+- Okay, graduation cap project mostly done so I can get back to business! Only about a month left before the games actually come out, so not much time to get all the apps I want made. But I'll do my best!
+- Tweaked the coin toss animation to be more accurate.
+    - It's hard to figure out the exact timing of the Poketch in the games, but just from eyeing it I think I've got the time right.
+- Seems like past me started working on getting swipe gestures to switch views going. Finished the job by calculating the swipe direction.
+- Poketch complications left:
+    - Clock ✅
+    - Calculator 
+    - Memo Pad
+    - Pedometer
+    - Counter
+    - Analog Watch
+    - Marking Map
+    - Coin Toss ✅
+    - Move Tester
+    - Calendar
+    - Dot Artist
+    - Roulette
+    - Kitchen Timer
+    - Color Changer
+    - Stopwatch
+    - Alarm Clock
+- Not sure I am actually going to do all of these, especially since I don't have that many days left until release. Definitely went to get in the useful or fun apps though if I can.
+
 ## Thursday September 9th, 2021
 
-- Continuing work on the coin toss app. Using SwiftUI animations I can emulate the coin animation pretty well.
+- Using SwiftUI animations I can emulate the coin animation pretty well.
 - Getting the timings right for the coin bounces was a matter of recording my game screen and watching it back frame by frame. It is still just an estimate, but it is a pretty accurate one at least.
 - One funny problem I had was trying to figure out which side of the coin is meant to be heads or tails. Using the Pokemon anime as reference (Season 10, Episode 46) I figured out that the pokeball is meant to be tails. Wouldn't have guessed that.
 

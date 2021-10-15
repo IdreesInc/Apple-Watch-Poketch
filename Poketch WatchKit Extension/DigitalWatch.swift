@@ -13,6 +13,8 @@ struct DigitalWatch: View {
     
     @ObservedObject var theme: Theme
     
+    @GestureState var press = false
+    
     @State var digitOne = "1"
     @State var digitTwo = "0"
     @State var digitColon = "colon"
@@ -46,14 +48,14 @@ struct DigitalWatch: View {
                 if hour.count == 1 {
                     hour = "0" + hour
                 }
-                if (minutes.count == 1) {
+                if minutes.count == 1 {
                     minutes = "0" + minutes
                 }
                 digitOne = String(hour.prefix(1))
                 digitTwo = String(hour.suffix(1))
                 digitThree = String(minutes.prefix(1))
                 digitFour = String(minutes.suffix(1))
-                if (glowing && Int(Date().timeIntervalSince1970) - lastTime > 3) {
+                if glowing && Int(Date().timeIntervalSince1970) - lastTime > 3 {
                     glowing = false
                 }
             }
@@ -69,11 +71,11 @@ struct DigitalWatch: View {
             }
         }.gesture(
             DragGesture(minimumDistance: 0)
-                .onChanged({ (touch) in
+                .onChanged({ touch in
                     glowing = true
                     lastTime = Int(Date().timeIntervalSince1970)
                 })
-                .onEnded({ (touch) in
+                .onEnded({ touch in
                     glowing = false
                 })
         )
