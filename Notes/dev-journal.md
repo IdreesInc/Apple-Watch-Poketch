@@ -1,5 +1,12 @@
 # Dev Journal
 
+## Monday October 18th, 2021
+
+- Added the counter app.
+    - Not particularly tricky, though I did have to mess around with a few options for buttons before deciding that sticking to drag gestures is probably my best bet.
+    - I may revisit this later if I have the time and convert everything to buttons, but for now it's quicker to just stick with gestures and not have to manage state further than the view's "global" state.
+- Also can't decide if I should retain the count when the app is swiped away. The original poketch doesn't do that so for now I am taking the easy route and letting it be temporary.
+
 ## Thursday October 14th, 2021
 
 - Okay, graduation cap project mostly done so I can get back to business! Only about a month left before the games actually come out, so not much time to get all the apps I want made. But I'll do my best!

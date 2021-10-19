@@ -10,19 +10,23 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var theme = Theme()
     
+    @State var views: [AnyView] = []
     @State var viewIndex = 0
-        
-    var views: [AnyView] = []
-    
-    init() {
-        views.append(AnyView(DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-        views.append(AnyView(CoinToss(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-    }
     
     var body: some View {
         ZStack {
-            views[viewIndex]
-        }.simultaneousGesture(
+            if views.count > 0 {
+                views[viewIndex]
+            }
+        }
+        .onAppear() {
+            if views.count == 0 {
+                views.append(AnyView(DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(CoinToss(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(Counter(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+            }
+        }
+        .simultaneousGesture(
             DragGesture(minimumDistance: 100)
 //                .onChanged({ touch in
 //                    print("Touch change")
