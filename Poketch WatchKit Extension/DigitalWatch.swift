@@ -30,6 +30,23 @@ struct DigitalWatch: View {
         self.theme = theme
     }
     
+    func updateClock() {
+        let date = Date()
+        let calendar = Calendar.current
+        var hour = String(calendar.component(.hour, from: date))
+        var minutes = String(calendar.component(.minute, from: date))
+        if hour.count == 1 {
+            hour = "0" + hour
+        }
+        if minutes.count == 1 {
+            minutes = "0" + minutes
+        }
+        digitOne = String(hour.prefix(1))
+        digitTwo = String(hour.suffix(1))
+        digitThree = String(minutes.prefix(1))
+        digitFour = String(minutes.suffix(1))
+    }
+    
     var body: some View {
         ZStack {
             glowing ? theme.colorAGlow : theme.colorA
@@ -41,24 +58,11 @@ struct DigitalWatch: View {
                 Image("digit-" + digitFour).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
             }.onReceive(timer) { _ in
                 self.digitColon = self.digitColon == "colon" && !isLuminanceReduced ? "colon-blank" : "colon"
-                let date = Date()
-                let calendar = Calendar.current
-                var hour = String(calendar.component(.hour, from: date))
-                var minutes = String(calendar.component(.minute, from: date))
-                if hour.count == 1 {
-                    hour = "0" + hour
-                }
-                if minutes.count == 1 {
-                    minutes = "0" + minutes
-                }
-                digitOne = String(hour.prefix(1))
-                digitTwo = String(hour.suffix(1))
-                digitThree = String(minutes.prefix(1))
-                digitFour = String(minutes.suffix(1))
                 if glowing && Int(Date().timeIntervalSince1970) - lastTime > 3 {
                     glowing = false
                 }
-            }
+                updateClock()
+            }.onAppear(perform: updateClock)
             VStack {
                 Spacer()
                 HStack (alignment: .bottom, spacing: 0) {
