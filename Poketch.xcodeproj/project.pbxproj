@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A42C223271F79AA00CE870E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A42C222271F79AA00CE870E /* HealthKit.framework */; };
+		4A42C225271F7A0E00CE870E /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C224271F7A0E00CE870E /* Pedometer.swift */; };
 		4A48C2D0271E29CA00301A02 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C2CF271E29CA00301A02 /* Counter.swift */; };
 		4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8ED26E6717700D6EB3A /* Theme.swift */; };
 		4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD12E6A26E98637005178D2 /* CoinToss.swift */; };
@@ -68,6 +70,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A42C220271F79A900CE870E /* Poketch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Poketch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		4A42C222271F79AA00CE870E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		4A42C224271F7A0E00CE870E /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
 		4A48C2CF271E29CA00301A02 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		4A48F8ED26E6717700D6EB3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4AD12E6A26E98637005178D2 /* CoinToss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinToss.swift; sourceTree = "<group>"; };
@@ -102,12 +107,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A42C223271F79AA00CE870E /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A42C221271F79AA00CE870E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A42C222271F79AA00CE870E /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4AD2A92226D0B88600126756 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +129,7 @@
 				4AD2A93E26D0B88D00126756 /* Poketch WatchKit App */,
 				4AD2A94A26D0B89000126756 /* Poketch WatchKit Extension */,
 				4AD2A92C26D0B88700126756 /* Products */,
+				4A42C221271F79AA00CE870E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,9 +175,11 @@
 		4AD2A94A26D0B89000126756 /* Poketch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4A42C220271F79A900CE870E /* Poketch WatchKit Extension.entitlements */,
 				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
 				4AD12E6A26E98637005178D2 /* CoinToss.swift */,
 				4A48C2CF271E29CA00301A02 /* Counter.swift */,
+				4A42C224271F7A0E00CE870E /* Pedometer.swift */,
 				4AD2A94B26D0B89000126756 /* ContentView.swift */,
 				4AD2A94D26D0B89000126756 /* PoketchApp.swift */,
 				4A48F8ED26E6717700D6EB3A /* Theme.swift */,
@@ -328,6 +345,7 @@
 				4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */,
 				4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */,
 				4A48C2D0271E29CA00301A02 /* Counter.swift in Sources */,
+				4A42C225271F7A0E00CE870E /* Pedometer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Poketch WatchKit Extension/Poketch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Poketch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4QHN4728NU;
@@ -486,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Poketch WatchKit Extension/Poketch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Poketch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4QHN4728NU;

@@ -34,5 +34,11 @@
 	</dict>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Let the pedometer read your steps</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Let the pedometer display your steps</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Let the pedometer update your steps</string>
 </dict>
 </plist>

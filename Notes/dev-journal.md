@@ -1,11 +1,55 @@
 # Dev Journal
 
+## Tuesday October 19th, 2021
+
+- Added the pedometer app.
+    - Had to think a little bit about how to make this actually work in the real world. Decided to show the current amount of steps for the day by default and then go from there as long as the app is open.
+    - If the view is switched, the counter gets reset.
+    - Pressing the "clear" button resets the step count to 0.
+- I was surprised by how responsive the HealthKit integration was. Steps update about every 30 seconds which is a lot better than I would've expected on an Apple Watch. Obviously it'd have been nice if it updated every step but I'm not going to complain.
+- I'm concerned about what happens to the HealthKit query when the view is refreshed. Does it get garbage collected, or is it still querying in the background and trying to update a view that doesn't exist?
+    - Even worse, does that view actually exist in some phantom zone and I am just creating more and more views with each swipe? I sure hope not...
+- Poketch complications left:
+    - Clock ✅
+    - Calculator
+    - Memo Pad
+    - Pedometer ✅
+    - Counter ✅
+    - Analog Watch
+    - Marking Map
+    - Coin Toss ✅
+    - Move Tester
+    - Calendar
+    - Dot Artist
+    - Roulette
+    - Kitchen Timer
+    - Color Changer
+    - Stopwatch
+    - Alarm Clock
+
 ## Monday October 18th, 2021
 
 - Added the counter app.
     - Not particularly tricky, though I did have to mess around with a few options for buttons before deciding that sticking to drag gestures is probably my best bet.
     - I may revisit this later if I have the time and convert everything to buttons, but for now it's quicker to just stick with gestures and not have to manage state further than the view's "global" state.
 - Also can't decide if I should retain the count when the app is swiped away. The original poketch doesn't do that so for now I am taking the easy route and letting it be temporary.
+- Poketch complications left:
+    - Clock ✅
+    - Calculator
+    - Memo Pad
+    - Pedometer
+    - Counter ✅
+    - Analog Watch
+    - Marking Map
+    - Coin Toss ✅
+    - Move Tester
+    - Calendar
+    - Dot Artist
+    - Roulette
+    - Kitchen Timer
+    - Color Changer
+    - Stopwatch
+    - Alarm Clock
 
 ## Thursday October 14th, 2021
 

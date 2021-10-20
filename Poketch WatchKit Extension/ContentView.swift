@@ -24,6 +24,7 @@ struct ContentView: View {
                 views.append(AnyView(DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(CoinToss(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Counter(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(Pedometer(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
             }
         }
         .simultaneousGesture(
