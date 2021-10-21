@@ -12,8 +12,8 @@ struct Pedometer: View {
     
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     
-    @ObservedObject var theme: Theme
-    
+    @EnvironmentObject var config: Config
+
     @GestureState var press = false
     
     @State var healthkitInitialized = false
@@ -30,10 +30,6 @@ struct Pedometer: View {
     let buttonWidth = 80.0
     
     var healthStore = HKHealthStore()
-    
-    init(theme: Theme) {
-        self.theme = theme
-    }
     
     func initHealthStuff() {
         if !healthkitInitialized {
@@ -104,37 +100,37 @@ struct Pedometer: View {
     
     var body: some View {
         ZStack {
-            theme.colorA
+            config.theme.colorA
             VStack (spacing: 10.0) {
                 ZStack {
-                    Image("pedometer-frame").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: frameWidth).foregroundColor(theme.colorB).offset(y: width / 16.0)
+                    Image("pedometer-frame").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: frameWidth).foregroundColor(config.theme.colorB).offset(y: width / 16.0)
                     HStack (spacing: 0) {
                         ZStack {
-                            Image("counter-digit-" + digitOne + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorB)
-                            Image("counter-digit-" + digitOne + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorD)
+                            Image("counter-digit-" + digitOne + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorB)
+                            Image("counter-digit-" + digitOne + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
-                            Image("counter-digit-" + digitTwo + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorB)
-                            Image("counter-digit-" + digitTwo + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorD)
+                            Image("counter-digit-" + digitTwo + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorB)
+                            Image("counter-digit-" + digitTwo + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
-                            Image("counter-digit-" + digitThree + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorB)
-                            Image("counter-digit-" + digitThree + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorD)
+                            Image("counter-digit-" + digitThree + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorB)
+                            Image("counter-digit-" + digitThree + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
-                            Image("counter-digit-" + digitFour + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorB)
-                            Image("counter-digit-" + digitFour + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorD)
+                            Image("counter-digit-" + digitFour + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorB)
+                            Image("counter-digit-" + digitFour + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
-                            Image("counter-digit-" + digitFive + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorB)
-                            Image("counter-digit-" + digitFive + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(theme.colorD)
+                            Image("counter-digit-" + digitFive + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorB)
+                            Image("counter-digit-" + digitFive + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(config.theme.colorD)
                         }
                     }.onAppear(perform: initHealthStuff)
                 }
                 ZStack {
-                    Image("pedometer-button" + clearButtonPressed + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(theme.colorB)
-                    Image("pedometer-button" + clearButtonPressed + "-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(theme.colorC)
-                    Image("pedometer-button" + clearButtonPressed + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(theme.colorD)
+                    Image("pedometer-button" + clearButtonPressed + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                    Image("pedometer-button" + clearButtonPressed + "-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                    Image("pedometer-button" + clearButtonPressed + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
                 }
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -153,6 +149,6 @@ struct Pedometer: View {
 
 struct Pedometer_Previews: PreviewProvider {
     static var previews: some View {
-        Pedometer(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
+        Pedometer().environmentObject(Config()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
     }
 }

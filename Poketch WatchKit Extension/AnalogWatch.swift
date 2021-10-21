@@ -17,8 +17,8 @@ struct AnalogWatch: View {
     
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     
-    @ObservedObject var theme: Theme
-    
+    @EnvironmentObject var config: Config
+
     @GestureState var press = false
     
     @State var glowing = false
@@ -34,8 +34,7 @@ struct AnalogWatch: View {
     let fiveMinuteAngles: [IncrementAngle]
     let fifteenMinuteAngles: [IncrementAngle]
     
-    init(theme: Theme) {
-        self.theme = theme
+    init() {
         let sqrt3 = (3.0).squareRoot()
         fiveMinuteAngles = [
             IncrementAngle(x: sqrt3/2, y: 1/2),
@@ -68,15 +67,15 @@ struct AnalogWatch: View {
     
     var body: some View {
         ZStack {
-            glowing ? theme.colorAGlow : theme.colorA
+            glowing ? config.theme.colorAGlow : config.theme.colorA
             ZStack {
-                Image("minute-hand").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: minuteWidth).rotationEffect(.degrees(minuteRotation)).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
-                Image("hour-hand").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: hourWidth).rotationEffect(.degrees(hourRotation)).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                Image("minute-hand").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: minuteWidth).rotationEffect(.degrees(minuteRotation)).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
+                Image("hour-hand").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: hourWidth).rotationEffect(.degrees(hourRotation)).foregroundColor(glowing ? config.theme.colorBGlow : config.theme.colorB)
                 ForEach(fiveMinuteAngles) { angle in
-                    Image("five-minute-increment").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: incrementWidth).offset(x: angle.x * (minuteWidth / 2 + incrementSpacing), y: angle.y * (minuteWidth / 2 + incrementSpacing)).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                    Image("five-minute-increment").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: incrementWidth).offset(x: angle.x * (minuteWidth / 2 + incrementSpacing), y: angle.y * (minuteWidth / 2 + incrementSpacing)).foregroundColor(glowing ? config.theme.colorBGlow : config.theme.colorB)
                 }
                 ForEach(fifteenMinuteAngles) { angle in
-                    Image("fifteen-minute-increment").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: incrementWidth).offset(x: angle.x * (minuteWidth / 2 + incrementSpacing), y: angle.y * (minuteWidth / 2 + incrementSpacing)).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                    Image("fifteen-minute-increment").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: incrementWidth).offset(x: angle.x * (minuteWidth / 2 + incrementSpacing), y: angle.y * (minuteWidth / 2 + incrementSpacing)).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
                 }
             }.onReceive(timer) { _ in
                 if glowing && Int(Date().timeIntervalSince1970) - lastTime > 3 {
@@ -99,6 +98,6 @@ struct AnalogWatch: View {
 
 struct AnalogWatch_Previews: PreviewProvider {
     static var previews: some View {
-        AnalogWatch(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
+        AnalogWatch().environmentObject(Config()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
     }
 }

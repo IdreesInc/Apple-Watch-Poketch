@@ -5,6 +5,8 @@
 - Added analog watch app.
     - I expected this to be easy, but I had a little difficulty getting the clock hands right. I forgot that while the minute hand rotation is easy to solve (minute/60), the hour hand is more complex. I had to get the minutes from midnight, modulo by 12 hours, and then use that divided by another 12 hours. I originally missed the modulo step and was off by a few degrees until I realized the error of my ways.
 - Adjusted digital watch Pikachu and coin size to be more readable and better match the "resolution" of the other apps.
+- EnvironmentObject now no longer seems to crash preview, so I have made all the views use that instead like originally planned.
+- Began work on color changer app. Need to allow for dragging the slider, and then grab the colors for the other themes.
 
 ## Tuesday October 19th, 2021
 

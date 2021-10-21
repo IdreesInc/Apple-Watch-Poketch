@@ -12,7 +12,7 @@ struct PoketchApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView().environmentObject(Theme())
+                ContentView().environmentObject(Config())
             }
         }
     }

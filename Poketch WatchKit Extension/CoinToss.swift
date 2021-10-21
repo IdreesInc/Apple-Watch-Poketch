@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CoinToss: View {
     
-    @ObservedObject var theme: Theme
-    
+    @EnvironmentObject var config: Config
+
     @State var coinSide = "fish"
     @State var coinOffset: Double
     @State var flipping = false
@@ -22,8 +22,7 @@ struct CoinToss: View {
     let initialCoinOffset = 59.0
     let timer = Timer.publish(every: 0.08, on: .main, in: .common).autoconnect()
     
-    init(theme: Theme) {
-        self.theme = theme
+    init() {
         self.coinOffset = initialCoinOffset
     }
     
@@ -56,12 +55,12 @@ struct CoinToss: View {
     
     var body: some View {
         ZStack {
-            theme.colorA
-            Image("coin-toss-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 16).foregroundColor(theme.colorB).offset(y: 20)
+            config.theme.colorA
+            Image("coin-toss-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 16).foregroundColor(config.theme.colorB).offset(y: 20)
             ZStack {
-                Image("coin-" + coinSide + "-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).foregroundColor(theme.colorA).offset(y: coinOffset).frame(width: coinWidth)
-                Image("coin-" + coinSide + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).foregroundColor(theme.colorB).offset(y: coinOffset).frame(width: coinWidth)
-                Image("coin-" + coinSide + "-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).foregroundColor(theme.colorC).offset(y: coinOffset).frame(width: coinWidth)
+                Image("coin-" + coinSide + "-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).foregroundColor(config.theme.colorA).offset(y: coinOffset).frame(width: coinWidth)
+                Image("coin-" + coinSide + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).foregroundColor(config.theme.colorB).offset(y: coinOffset).frame(width: coinWidth)
+                Image("coin-" + coinSide + "-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).foregroundColor(config.theme.colorC).offset(y: coinOffset).frame(width: coinWidth)
             }.onReceive(timer) { _ in
                 if (flipping) {
                     coinAnimationFrame = coinAnimationFrame - 1
@@ -88,6 +87,6 @@ struct CoinToss: View {
 
 struct CoinToss_Previews: PreviewProvider {
     static var previews: some View {
-        CoinToss(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
+        CoinToss().environmentObject(Config()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
     }
 }

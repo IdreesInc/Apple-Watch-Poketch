@@ -11,8 +11,8 @@ struct DigitalWatch: View {
     
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     
-    @ObservedObject var theme: Theme
-    
+    @EnvironmentObject var config: Config
+
     @GestureState var press = false
     
     @State var digitOne = "1"
@@ -25,10 +25,6 @@ struct DigitalWatch: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let width = 32.0
-        
-    init(theme: Theme) {
-        self.theme = theme
-    }
     
     func updateClock() {
         let date = Date()
@@ -49,13 +45,13 @@ struct DigitalWatch: View {
     
     var body: some View {
         ZStack {
-            glowing ? theme.colorAGlow : theme.colorA
+            glowing ? config.theme.colorAGlow : config.theme.colorA
             HStack (spacing: 0) {
-                Image("digit-" + digitOne).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
-                Image("digit-" + digitTwo).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
-                Image(digitColon).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width / 2.5).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
-                Image("digit-" + digitThree).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
-                Image("digit-" + digitFour).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                Image("digit-" + digitOne).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
+                Image("digit-" + digitTwo).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
+                Image(digitColon).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width / 2.5).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
+                Image("digit-" + digitThree).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
+                Image("digit-" + digitFour).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
             }.onReceive(timer) { _ in
                 self.digitColon = self.digitColon == "colon" && !isLuminanceReduced ? "colon-blank" : "colon"
                 if glowing && Int(Date().timeIntervalSince1970) - lastTime > 3 {
@@ -67,10 +63,10 @@ struct DigitalWatch: View {
                 Spacer()
                 HStack (alignment: .bottom, spacing: 0) {
                     ZStack {
-                        Image("mouse-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 44).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
-                        Image("mouse-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 44).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                        Image("mouse-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 44).foregroundColor(glowing ? config.theme.colorBGlow : config.theme.colorB)
+                        Image("mouse-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 44).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
                     }
-                    Image("digital-watch-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 44).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                    Image("digital-watch-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 44).foregroundColor(glowing ? config.theme.colorBGlow : config.theme.colorB)
                 }
             }
         }.gesture(
@@ -88,6 +84,6 @@ struct DigitalWatch: View {
 
 struct DigitalWatch_Previews: PreviewProvider {
     static var previews: some View {
-        DigitalWatch(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
+        DigitalWatch().environmentObject(Config()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
     }
 }

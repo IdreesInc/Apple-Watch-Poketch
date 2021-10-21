@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var theme = Theme()
+    @EnvironmentObject var config: Config
     
     @State var views: [AnyView] = []
     @State var viewIndex = 0
@@ -21,11 +21,12 @@ struct ContentView: View {
         }
         .onAppear() {
             if views.count == 0 {
-                views.append(AnyView(DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(Pedometer(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(Counter(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(AnalogWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(CoinToss(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(DigitalWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(Pedometer().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(Counter().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(AnalogWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(CoinToss().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(ColorChanger().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
             }
         }
         .simultaneousGesture(
@@ -53,6 +54,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Config())
     }
 }
