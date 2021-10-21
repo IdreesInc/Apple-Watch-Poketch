@@ -11,6 +11,7 @@
 		4A42C225271F7A0E00CE870E /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C224271F7A0E00CE870E /* Pedometer.swift */; };
 		4A48C2D0271E29CA00301A02 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48C2CF271E29CA00301A02 /* Counter.swift */; };
 		4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8ED26E6717700D6EB3A /* Theme.swift */; };
+		4AABA7E62720E7E100FC9B75 /* AnalogWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */; };
 		4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD12E6A26E98637005178D2 /* CoinToss.swift */; };
 		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
 		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
@@ -75,6 +76,7 @@
 		4A42C224271F7A0E00CE870E /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
 		4A48C2CF271E29CA00301A02 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		4A48F8ED26E6717700D6EB3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogWatch.swift; sourceTree = "<group>"; };
 		4AD12E6A26E98637005178D2 /* CoinToss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinToss.swift; sourceTree = "<group>"; };
 		4AD2A92B26D0B88700126756 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD2A92E26D0B88700126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				4A42C220271F79A900CE870E /* Poketch WatchKit Extension.entitlements */,
 				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
+				4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */,
 				4AD12E6A26E98637005178D2 /* CoinToss.swift */,
 				4A48C2CF271E29CA00301A02 /* Counter.swift */,
 				4A42C224271F7A0E00CE870E /* Pedometer.swift */,
@@ -340,6 +343,7 @@
 			files = (
 				4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */,
 				4AD2A94E26D0B89000126756 /* PoketchApp.swift in Sources */,
+				4AABA7E62720E7E100FC9B75 /* AnalogWatch.swift in Sources */,
 				4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */,
 				4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */,
 				4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */,

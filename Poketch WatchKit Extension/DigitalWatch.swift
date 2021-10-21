@@ -67,10 +67,10 @@ struct DigitalWatch: View {
                 Spacer()
                 HStack (alignment: .bottom, spacing: 0) {
                     ZStack {
-                        Image("mouse-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
-                        Image("mouse-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 38).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
+                        Image("mouse-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 44).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                        Image("mouse-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: 44).foregroundColor(glowing ? theme.colorCGlow : theme.colorC)
                     }
-                    Image("digital-watch-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 38).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
+                    Image("digital-watch-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 44).foregroundColor(glowing ? theme.colorBGlow : theme.colorB)
                 }
             }
         }.gesture(

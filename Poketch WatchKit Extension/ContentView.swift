@@ -22,9 +22,10 @@ struct ContentView: View {
         .onAppear() {
             if views.count == 0 {
                 views.append(AnyView(DigitalWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(CoinToss(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(Counter(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Pedometer(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(Counter(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(AnalogWatch(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(CoinToss(theme: theme).ignoresSafeArea(.all).navigationBarHidden(true)))
             }
         }
         .simultaneousGesture(

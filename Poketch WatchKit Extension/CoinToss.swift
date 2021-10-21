@@ -17,9 +17,9 @@ struct CoinToss: View {
     @State var coinAnimationFrame = 0
     @State var outcome: Bool = false
     
-    let coinWidth = 64.0
+    let coinWidth = 68.0
     let flipHeight = 90.0
-    let initialCoinOffset = 57.0
+    let initialCoinOffset = 59.0
     let timer = Timer.publish(every: 0.08, on: .main, in: .common).autoconnect()
     
     init(theme: Theme) {
@@ -88,7 +88,6 @@ struct CoinToss: View {
 
 struct CoinToss_Previews: PreviewProvider {
     static var previews: some View {
-        CoinToss(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 44mm")
         CoinToss(theme: Theme()).ignoresSafeArea(.all).navigationBarHidden(true).previewDevice("Apple Watch Series 6 - 40mm")
     }
 }
