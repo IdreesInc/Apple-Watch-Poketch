@@ -44,6 +44,7 @@ struct DigitalWatch: View {
     }
     
     var body: some View {
+        // TODO: Add top line
         ZStack {
             glowing ? config.theme.colorAGlow : config.theme.colorA
             HStack (spacing: 0) {

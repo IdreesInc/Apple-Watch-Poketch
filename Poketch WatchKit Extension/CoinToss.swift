@@ -27,6 +27,7 @@ struct CoinToss: View {
     }
     
     func flip() {
+        // Tried to get the timings as accurate as possible here by looking at the animation frame by frame, though they might still be off by a bit
         let timings = [1.0, 0.7, 0.5, 0.25]
         var delay = 0.0
         flipping = true
