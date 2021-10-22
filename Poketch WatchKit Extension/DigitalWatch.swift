@@ -44,9 +44,12 @@ struct DigitalWatch: View {
     }
     
     var body: some View {
-        // TODO: Add top line
         ZStack {
             glowing ? config.theme.colorAGlow : config.theme.colorA
+            VStack {
+                Image("digital-watch-top-line").renderingMode(.template).interpolation(.none).resizable().frame(height: 4).foregroundColor(glowing ? config.theme.colorBGlow : config.theme.colorB)
+                Spacer()
+            }
             HStack (spacing: 0) {
                 Image("digit-" + digitOne).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
                 Image("digit-" + digitTwo).renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: width).foregroundColor(glowing ? config.theme.colorCGlow : config.theme.colorC)
