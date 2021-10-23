@@ -26,6 +26,7 @@ struct ContentView: View {
                 views.append(AnyView(Counter().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(AnalogWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(CoinToss().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(MoveTester().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(ColorChanger().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
             }
         }

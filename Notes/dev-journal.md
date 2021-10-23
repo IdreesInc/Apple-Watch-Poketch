@@ -1,5 +1,12 @@
 # Dev Journal
 
+## Friday October 22nd, 2021
+
+- Added color changer app.
+    - Not a big fan of how some of the glowing colors look washed out, but gotta stay authentic!
+- Added most of the move tester app.
+    - This one was particularly hard. Not only does it have a lot of moving parts, I also had to reimplement the pokemon type chart myself.
+
 ## Wednesday October 20th, 2021
 
 - Added analog watch app.
