@@ -67,7 +67,8 @@ struct MoveTester: View {
     }
     
     let dialogueFrameHeight = 32.0
-    let exclamationMarkWidth = 6.0
+    let exclamationFrameWidth = 56.0
+    let exclamationMarkWidth = 5.0
     let textHeight = 12.0
     let types = [
         "none": MoveType(name: "none", weaknesses: [], resistances: [], immunities: []),
@@ -98,7 +99,7 @@ struct MoveTester: View {
                 HStack(spacing: 0.0) {
                     Spacer()
                     ZStack {
-                        Image("move-tester-bubble").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 62.0 * 0.96).foregroundColor(config.theme.colorB)
+                        Image("move-tester-bubble").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: exclamationFrameWidth).foregroundColor(config.theme.colorB)
                         HStack(spacing: 2.0) {
                             Image("move-tester-exclamation-mark").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: exclamationMarkWidth).foregroundColor(config.theme.colorC).opacity(strength > 0 ? 1.0 : 0.0)
                             Image("move-tester-exclamation-mark").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: exclamationMarkWidth).foregroundColor(config.theme.colorC).opacity(strength > 1 ? 1.0 : 0.0)
@@ -106,18 +107,18 @@ struct MoveTester: View {
                             Image("move-tester-exclamation-mark").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: exclamationMarkWidth).foregroundColor(config.theme.colorC).opacity(strength > 3 ? 1.0 : 0.0)
                             Image("move-tester-exclamation-mark").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: exclamationMarkWidth).foregroundColor(config.theme.colorC).opacity(strength > 4 ? 1.0 : 0.0)
                         }.offset(x: -4.0)
-                    }.offset(x: -2.0, y: -14.0)
+                    }.offset(x: -2.0, y: -12.0)
                     VStack(spacing: 0.0) {
                         Image("move-tester-defense-top").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 48.0 * 0.8).foregroundColor(config.theme.colorB)
                         TypeSelect(type: $defensePrimaryType)
-                        TypeSelect(type: $defenseSecondaryType)
+                        TypeSelect(type: $defenseSecondaryType, defaultTypeIndex: 0)
                         ZStack {
                             Image("move-tester-defense-bottom-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 80.0 * 0.8).foregroundColor(config.theme.colorB)
                             Image("move-tester-defense-bottom-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 80.0 * 0.8).foregroundColor(config.theme.colorC)
                         }
                     }
                 }.offset(y: 20.0)
-                Image("move-tester-arrow").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 26.0 * 1).foregroundColor(config.theme.colorB).offset(x: -20.0, y: 20.0)
+                Image("move-tester-arrow").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 26.0 * 1.0).foregroundColor(config.theme.colorB).offset(x: -20.0, y: 22.0)
                 HStack() {
                     Image("move-tester-offense-top").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 46.0 * 0.8).foregroundColor(config.theme.colorB)
                     Spacer()
@@ -135,18 +136,20 @@ struct MoveTester: View {
                             Image("move-tester-dialogue-left-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: dialogueFrameHeight).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
-                            Image("move-tester-dialogue-middle-a").renderingMode(.template).interpolation(.none).resizable().frame(width: .infinity, height: dialogueFrameHeight).foregroundColor(config.theme.colorA)
-                            Image("move-tester-dialogue-middle-d").renderingMode(.template).interpolation(.none).resizable().frame(width: .infinity, height: dialogueFrameHeight).foregroundColor(config.theme.colorD)
-                            // TODO: Left align the text
-                            ZStack {
-                                    Image("move-tester-" + effectivenessText + "-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: textHeight).foregroundColor(config.theme.colorC)
-                                Image("move-tester-" + effectivenessText + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: textHeight).foregroundColor(config.theme.colorD)
-                            }
+                            Image("move-tester-dialogue-middle-a").renderingMode(.template).interpolation(.none).resizable().frame(height: dialogueFrameHeight).foregroundColor(config.theme.colorA)
+                            Image("move-tester-dialogue-middle-d").renderingMode(.template).interpolation(.none).resizable().frame(height: dialogueFrameHeight).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
                             Image("move-tester-dialogue-right-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: dialogueFrameHeight).foregroundColor(config.theme.colorA)
                             Image("move-tester-dialogue-right-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: dialogueFrameHeight).foregroundColor(config.theme.colorD)
                         }
+                    }
+                    HStack {
+                        ZStack {
+                            Image("move-tester-" + effectivenessText + "-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: textHeight).foregroundColor(config.theme.colorC)
+                            Image("move-tester-" + effectivenessText + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(height: textHeight).foregroundColor(config.theme.colorD)
+                        }.offset(x: 10.0)
+                        Spacer()
                     }
                 }
             }

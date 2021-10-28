@@ -1,5 +1,10 @@
 # Dev Journal
 
+## Wednesday October 27th, 2021
+
+- Completed move tester app.
+    - You know how I said I added "most of" the move tester app last week? Turns out that the last 5% was debugging, and that was very annoying. It might've been easier if SwiftUI previews weren't broken once again, this time due to a memory leak bug that causes memory usage to go above 40gb for the swiftui-frontend process. Bloody Xcode, it truly is the worst.
+
 ## Friday October 22nd, 2021
 
 - Added color changer app.

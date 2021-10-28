@@ -21,19 +21,20 @@ struct TypeSelect: View {
     
     @State var leftPressed = ""
     @State var rightPressed = ""
-    @State var currentTypeIndex = 0
+    @State var currentTypeIndex: Int
+    @State var allowNone: Bool
     
-    let buttonWidth = 24.0 * 5/6
-    let frameWidth = 64.0 * 5/6
+    let buttonWidth = 24.0 * 7/8
+    let frameWidth = 64.0 * 7/8
     let textHeight = 10.0
     // Type order same as Poketch with Fairy type added
-    var types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"]
+    let types = ["none", "normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"]
     
-    init(type: Binding<String>) {
+    init(type: Binding<String>, defaultTypeIndex: Int = 1) {
         _type = type
-        if self.type == "none" {
-            types.insert("none", at: 0)
-        }
+        currentTypeIndex = defaultTypeIndex
+        allowNone = defaultTypeIndex == 0
+        print(currentTypeIndex)
     }
     
     var body: some View {
@@ -50,8 +51,9 @@ struct TypeSelect: View {
                     })
                     .onEnded({ touch in
                         leftPressed = ""
-                        currentTypeIndex = currentTypeIndex - 1
-                        if currentTypeIndex < 0 {
+                        if currentTypeIndex > (allowNone ? 0 : 1) {
+                            currentTypeIndex = currentTypeIndex - 1
+                        } else {
                             currentTypeIndex = types.count - 1
                         }
                         type = types[currentTypeIndex]
@@ -77,9 +79,10 @@ struct TypeSelect: View {
                     })
                     .onEnded({ touch in
                         rightPressed = ""
-                        currentTypeIndex = currentTypeIndex + 1
-                        if currentTypeIndex >= types.count {
-                            currentTypeIndex = 0
+                        if currentTypeIndex == types.count - 1 {
+                            currentTypeIndex = allowNone ? 0 : 1
+                        } else {
+                            currentTypeIndex = currentTypeIndex + 1
                         }
                         type = types[currentTypeIndex]
                     })
