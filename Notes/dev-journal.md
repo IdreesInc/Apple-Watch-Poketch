@@ -6,6 +6,11 @@
   - Mainly this included ignoring leading zeros while allowing trailing zeros, which required handling the current value as a string rather than a decimal value. Decimal to string conversion doesn't have any obvious side effects that I can see, but I'm sure things get weird when using numbers that aren't actually numbers like infinity and all that.
 - Also found a divide-by-zero bug after converting from doubles to decimals (to reduce floating point errors). Adding a check for "isFinite" and setting the "overflow" flag if not seems to have done the trick.
 - There is one inaccuracy left where when the app first opens it isn't meant to show a digit at all but in my case shows zero. I will keep this for now.
+- Decided to add the marking map. Despite it being kind of useless on an Apple Watch, I figured it was one of those apps that really made the Poketch what it was.
+  - I did change things up a little though. I made it so that markers that are dragged to the bottom of the screen get reset, since I hated that the second you moved a marker even a little bit in the original game you could never reset it again.
+- For the first time I added persistence to the app so that the marker locations stick around even after swiping to another app. Was pretty easy actually!
+- The hard part with this app was trying to initialize the offsets of the markers to begin with. Swift makes initializing state variables messy, and in lieu of learning the right way to do it I just repeated some code like a sinner.
+- Also made it possible to switch between apps using the digital crown. This is actually pretty responsive and should pave the way for any apps that interfere with touch in the future should I actually want to make the drawing apps later on.
 
 ## Saturday November 13th, 2021
 

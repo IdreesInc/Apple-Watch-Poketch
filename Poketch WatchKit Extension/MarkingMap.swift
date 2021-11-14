@@ -41,6 +41,12 @@ struct MarkingMap: View {
         ]
         print(offsets)
     }
+    
+    func storeOffset(index: Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(offsets[index].x, forKey: "marker-\(index)-x")
+        defaults.set(offsets[index].y, forKey: "marker-\(index)-y")
+    }
 
     var body: some View {
         ZStack {
@@ -60,6 +66,7 @@ struct MarkingMap: View {
                                 offsets[0].x = originalOffsets[0].x
                                 offsets[0].y = originalOffsets[0].y
                             }
+                            storeOffset(index: 0)
                         })
                 )
             Image("marking-map-star").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingSize).foregroundColor(config.theme.colorD).offset(x: offsets[1].x, y: offsets[1].y)
@@ -73,6 +80,7 @@ struct MarkingMap: View {
                                 offsets[1].x = originalOffsets[1].x
                                 offsets[1].y = originalOffsets[1].y
                             }
+                            storeOffset(index: 1)
                         })
                 )
             Image("marking-map-square").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingSize).foregroundColor(config.theme.colorD).offset(x: offsets[2].x, y: offsets[2].y)
@@ -86,6 +94,7 @@ struct MarkingMap: View {
                                 offsets[2].x = originalOffsets[2].x
                                 offsets[2].y = originalOffsets[2].y
                             }
+                            storeOffset(index: 2)
                         })
                 )
             Image("marking-map-triangle").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingSize).foregroundColor(config.theme.colorD).offset(x: offsets[3].x, y: offsets[3].y)
@@ -99,6 +108,7 @@ struct MarkingMap: View {
                                 offsets[3].x = originalOffsets[3].x
                                 offsets[3].y = originalOffsets[3].y
                             }
+                            storeOffset(index: 3)
                         })
                 )
             Image("marking-map-heart").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingSize).foregroundColor(config.theme.colorD).offset(x: offsets[4].x, y: offsets[4].y)
@@ -112,6 +122,7 @@ struct MarkingMap: View {
                                 offsets[4].x = originalOffsets[4].x
                                 offsets[4].y = originalOffsets[4].y
                             }
+                            storeOffset(index: 4)
                         })
                 )
             Image("marking-map-diamond").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingSize).foregroundColor(config.theme.colorD).offset(x: offsets[5].x, y: offsets[5].y)
@@ -125,8 +136,21 @@ struct MarkingMap: View {
                                 offsets[5].x = originalOffsets[5].x
                                 offsets[5].y = originalOffsets[5].y
                             }
+                            storeOffset(index: 5)
                         })
                 )
+        }
+        .onAppear {
+            let defaults = UserDefaults.standard
+            for i in 0...5 {
+                let x = defaults.double(forKey: "marker-\(i)-x")
+                let y = defaults.double(forKey: "marker-\(i)-y")
+                if x == 0.0 && y == 0.0 {
+                    continue
+                }
+                offsets[i] = CGPoint(x: x, y: y)
+            }
+            defaults.double(forKey: "")
         }
     }
 }
