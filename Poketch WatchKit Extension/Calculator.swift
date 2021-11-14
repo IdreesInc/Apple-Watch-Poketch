@@ -14,7 +14,7 @@ struct Calculator: View {
     @EnvironmentObject var config: Config
     
     @State var previousValue = Decimal(0.0)
-    @State var currentValue = Decimal(0.0)
+    @State var currentValue = "0"
     @State var decimalMode = false
     @State var selectedFunction = "empty"
     @State var functionLocked = false
@@ -27,16 +27,16 @@ struct Calculator: View {
         overflow = false
         if !selectedFunction.isEmpty && !functionLocked {
             functionLocked = true
-            currentValue = 0.0
+            currentValue = "0"
         }
         if decimalMode {
-            var string = NSDecimalNumber(decimal: currentValue).stringValue
-            if !string.contains(".") {
-                string += "."
+            if !currentValue.contains(".") {
+                currentValue += "."
             }
-            currentValue = Decimal(string: string + String(digit))!
-        } else {
-            currentValue = currentValue * 10 + Decimal(digit)
+        }
+        currentValue = currentValue + String(digit)
+        if currentValue.hasPrefix("0") && !currentValue.hasPrefix("0.") {
+            currentValue = String(currentValue.suffix(currentValue.count - 1))
         }
     }
     
@@ -64,20 +64,22 @@ struct Calculator: View {
     }
     
     func calculate() {
-        print("current: " + NSDecimalNumber(decimal: currentValue).stringValue)
+        print("current: " + currentValue)
         print("previous: " + NSDecimalNumber(decimal: previousValue).stringValue)
         print("function: " + selectedFunction)
+        var convertedValue = Decimal(string: currentValue)!
         if selectedFunction == "add" {
-            currentValue = previousValue + currentValue
+            convertedValue = previousValue + convertedValue
         } else if selectedFunction == "subtract" {
-            currentValue = previousValue - currentValue
+            convertedValue = previousValue - convertedValue
         } else if selectedFunction == "multiply" {
-            currentValue = previousValue * currentValue
+            convertedValue = previousValue * convertedValue
         } else if selectedFunction == "divide" {
-            currentValue = previousValue / currentValue
+            convertedValue = previousValue / convertedValue
         }
-        print("result: " + NSDecimalNumber(decimal: currentValue).stringValue)
-        if currentValue >= pow(10, maxDigits) {
+        currentValue = NSDecimalNumber(decimal: convertedValue).stringValue
+        print("result: " + currentValue)
+        if convertedValue >= pow(10, maxDigits) {
             clear()
             overflow = true
             print("Overflow!")
@@ -89,7 +91,7 @@ struct Calculator: View {
     
     func clear() {
         decimalMode = false
-        currentValue = 0.0
+        currentValue = "0"
         previousValue = 0.0
         selectedFunction = "empty"
         functionLocked = false
@@ -104,9 +106,7 @@ struct Calculator: View {
             calculate()
         }
         selectedFunction = function
-        if previousValue != currentValue {
-            previousValue = currentValue
-        }
+        previousValue = Decimal(string: currentValue)!
     }
     
     var body: some View {
