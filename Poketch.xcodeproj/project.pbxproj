@@ -30,6 +30,8 @@
 		4AD2A95226D0B89200126756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A95126D0B89200126756 /* Assets.xcassets */; };
 		4AD2A95526D0B89200126756 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2A95426D0B89200126756 /* Preview Assets.xcassets */; };
 		4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */; };
+		4AE7F09127404A9100459A5D /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7F09027404A9100459A5D /* Calculator.swift */; };
+		4AE7F09327404C7000459A5D /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7F09227404C7000459A5D /* CalculatorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		4AD2A95426D0B89200126756 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AD2A95626D0B89200126756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalWatch.swift; sourceTree = "<group>"; };
+		4AE7F09027404A9100459A5D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		4AE7F09227404C7000459A5D /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				4A42C220271F79A900CE870E /* Poketch WatchKit Extension.entitlements */,
+				4AE7F09027404A9100459A5D /* Calculator.swift */,
+				4AE7F09227404C7000459A5D /* CalculatorButton.swift */,
 				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
 				4A42C224271F7A0E00CE870E /* Pedometer.swift */,
 				4A48C2CF271E29CA00301A02 /* Counter.swift */,
@@ -357,11 +363,13 @@
 				4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */,
 				4A5B28BA272357CB00F8F2A6 /* TypeSelect.swift in Sources */,
 				4AD2A94E26D0B89000126756 /* PoketchApp.swift in Sources */,
+				4AE7F09327404C7000459A5D /* CalculatorButton.swift in Sources */,
 				4AABA7E62720E7E100FC9B75 /* AnalogWatch.swift in Sources */,
 				4AABA7EA2721222A00FC9B75 /* Config.swift in Sources */,
 				4A5B28B62723550500F8F2A6 /* MoveTester.swift in Sources */,
 				4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */,
 				4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */,
+				4AE7F09127404A9100459A5D /* Calculator.swift in Sources */,
 				4AD2A95026D0B89000126756 /* ComplicationController.swift in Sources */,
 				4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */,
 				4A48C2D0271E29CA00301A02 /* Counter.swift in Sources */,

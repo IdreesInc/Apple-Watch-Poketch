@@ -1,5 +1,12 @@
 # Dev Journal
 
+## Saturday November 13th, 2021
+
+- Now that my new MacBook Pro is here, I can finally get back to work. The stupid swiftui-frontend bug was making it almost impossible to do anything but the new M1 chips can run simulators almost as fast as the preview on my old mac.
+- Going to see how many more apps I can make before I release my code next week.
+- Pretty satisfied with the app as-is, but there are a few more apps I want to get on there. Namely the calculator, Voltorb timer, and calendar.
+- The drawing apps are probably more trouble than they're worth.
+
 ## Wednesday October 27th, 2021
 
 - Completed move tester app.
