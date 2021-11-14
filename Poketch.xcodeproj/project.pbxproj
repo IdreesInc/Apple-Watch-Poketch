@@ -32,6 +32,7 @@
 		4AD2A96926D0B9AC00126756 /* DigitalWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */; };
 		4AE7F09127404A9100459A5D /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7F09027404A9100459A5D /* Calculator.swift */; };
 		4AE7F09327404C7000459A5D /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7F09227404C7000459A5D /* CalculatorButton.swift */; };
+		4AE7F0952741840700459A5D /* MarkingMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7F0942741840700459A5D /* MarkingMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalWatch.swift; sourceTree = "<group>"; };
 		4AE7F09027404A9100459A5D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		4AE7F09227404C7000459A5D /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		4AE7F0942741840700459A5D /* MarkingMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkingMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,12 +192,13 @@
 			isa = PBXGroup;
 			children = (
 				4A42C220271F79A900CE870E /* Poketch WatchKit Extension.entitlements */,
+				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
 				4AE7F09027404A9100459A5D /* Calculator.swift */,
 				4AE7F09227404C7000459A5D /* CalculatorButton.swift */,
-				4AD2A96626D0B9AC00126756 /* DigitalWatch.swift */,
 				4A42C224271F7A0E00CE870E /* Pedometer.swift */,
 				4A48C2CF271E29CA00301A02 /* Counter.swift */,
 				4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */,
+				4AE7F0942741840700459A5D /* MarkingMap.swift */,
 				4AD12E6A26E98637005178D2 /* CoinToss.swift */,
 				4A5B28B52723550500F8F2A6 /* MoveTester.swift */,
 				4A5B28B9272357CB00F8F2A6 /* TypeSelect.swift */,
@@ -361,6 +364,7 @@
 			files = (
 				4AABA7E827210CF900FC9B75 /* ColorChanger.swift in Sources */,
 				4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */,
+				4AE7F0952741840700459A5D /* MarkingMap.swift in Sources */,
 				4A5B28BA272357CB00F8F2A6 /* TypeSelect.swift in Sources */,
 				4AD2A94E26D0B89000126756 /* PoketchApp.swift in Sources */,
 				4AE7F09327404C7000459A5D /* CalculatorButton.swift in Sources */,

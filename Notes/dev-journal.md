@@ -1,11 +1,31 @@
 # Dev Journal
 
+## Sunday November 14th, 2021
+
+- Completed calculator, turns out I had to do some weird hacks to get everything looking the same as it did on the OG Poketch.
+  - Mainly this included ignoring leading zeros while allowing trailing zeros, which required handling the current value as a string rather than a decimal value. Decimal to string conversion doesn't have any obvious side effects that I can see, but I'm sure things get weird when using numbers that aren't actually numbers like infinity and all that.
+- Also found a divide-by-zero bug after converting from doubles to decimals (to reduce floating point errors). Adding a check for "isFinite" and setting the "overflow" flag if not seems to have done the trick.
+- There is one inaccuracy left where when the app first opens it isn't meant to show a digit at all but in my case shows zero. I will keep this for now.
+
 ## Saturday November 13th, 2021
 
-- Now that my new MacBook Pro is here, I can finally get back to work. The stupid swiftui-frontend bug was making it almost impossible to do anything but the new M1 chips can run simulators almost as fast as the preview on my old mac.
-- Going to see how many more apps I can make before I release my code next week.
+- Now that my new MacBook Pro is here, I can finally get back to work. The stupid swiftui-frontend bug was making it almost impossible to do anything, but the new M1 chips can run simulators almost as fast as the preview on my old mac.
 - Pretty satisfied with the app as-is, but there are a few more apps I want to get on there. Namely the calculator, Voltorb timer, and calendar.
-- The drawing apps are probably more trouble than they're worth.
+- The drawing apps are probably more trouble than they're worth considering they'd break the swipe gestures as they are currently and I'd have to learn how to use the canvas API quickly. If I have time, maybe I'll consider them again.
+- Calculator app almost done, just have to add the "?" symbol to the output for overflows.
+  - Hopefully I've gotten all of the big floating point errors down. It's always messy converting between big number types and strings but I think I did it without any obvious errors.
+  - The original Poketch completely ignores decimal points past the displayed digits, which works I guess but definitely reduces the accuracy. Haven't decided if I want to follow this pattern yet.
+- Poketch complications left:
+    - Clock ✅
+    - Pedometer ✅
+    - Counter ✅
+    - Analog Watch ✅
+    - Coin Toss ✅
+    - Move Tester ✅
+    - Color Changer ✅
+    - Calculator ⏳
+    - Calendar
+    - Stopwatch
 
 ## Wednesday October 27th, 2021
 
