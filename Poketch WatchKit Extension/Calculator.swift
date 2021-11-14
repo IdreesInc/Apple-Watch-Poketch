@@ -46,7 +46,7 @@ struct Calculator: View {
     
     func getDigit(digit: Int) -> String {
         if overflow {
-            return "empty"
+            return "question-mark"
         }
         var string = "\(currentValue)"
         if string.hasSuffix(".0") {
@@ -87,13 +87,13 @@ struct Calculator: View {
         } else if selectedFunction == "divide" {
             convertedValue = previousValue / convertedValue
         }
-        currentValue = NSDecimalNumber(decimal: convertedValue).stringValue
-        print("result: " + currentValue)
-        if convertedValue >= pow(10, maxDigits) {
+        if !convertedValue.isFinite || convertedValue >= pow(10, maxDigits) {
             clear()
             overflow = true
             print("Overflow!")
         }
+        currentValue = NSDecimalNumber(decimal: convertedValue).stringValue
+        print("result: " + currentValue)
         lastFunction = selectedFunction
         selectedFunction = "empty"
         functionLocked = false
