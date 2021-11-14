@@ -19,12 +19,16 @@ struct Calculator: View {
     @State var selectedFunction = "empty"
     @State var functionLocked = false
     @State var overflow = false
+    @State var lastFunction = ""
+    @State var lastValue = ""
     
     let spacing = 2.0 // 2.0
     let maxDigits = 9
     
     func addDigit(digit: Int) {
         overflow = false
+        lastFunction = ""
+        lastValue = ""
         if !selectedFunction.isEmpty && !functionLocked {
             functionLocked = true
             currentValue = "0"
@@ -64,9 +68,15 @@ struct Calculator: View {
     }
     
     func calculate() {
+        if !lastFunction.isEmpty && selectedFunction == "empty" {
+            selectedFunction = lastFunction
+            previousValue = Decimal(string: currentValue)!
+            currentValue = lastValue
+        }
         print("current: " + currentValue)
         print("previous: " + NSDecimalNumber(decimal: previousValue).stringValue)
         print("function: " + selectedFunction)
+        lastValue = currentValue
         var convertedValue = Decimal(string: currentValue)!
         if selectedFunction == "add" {
             convertedValue = previousValue + convertedValue
@@ -84,6 +94,7 @@ struct Calculator: View {
             overflow = true
             print("Overflow!")
         }
+        lastFunction = selectedFunction
         selectedFunction = "empty"
         functionLocked = false
         decimalMode = false
@@ -94,6 +105,8 @@ struct Calculator: View {
         currentValue = "0"
         previousValue = 0.0
         selectedFunction = "empty"
+        lastFunction = ""
+        lastValue = ""
         functionLocked = false
         overflow = false
     }
