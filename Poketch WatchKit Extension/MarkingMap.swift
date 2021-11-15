@@ -15,13 +15,13 @@ struct MarkingMap: View {
     @State var originalOffsets: [CGPoint]
     
     let markingMapWidth = 156.0 // 170.0
-    let markingSize = 10.0 // 10.0
+    let markingSize = 12.0 // 10.0
     let markingMargin = 20.0 // Gotta avoid that control center
     let markingSpacing = 3.0
     let lowerBound: Double
     
     init() {
-        let width = WKInterfaceDevice.current().screenBounds.width / 2.0 - markingMargin -  markingSize / 2.0
+        let width = WKInterfaceDevice.current().screenBounds.width / 2.0 - markingMargin / 2 -  markingSize / 2.0
         lowerBound = WKInterfaceDevice.current().screenBounds.height / 2 - markingSize / 2 - markingMargin
         originalOffsets = [
             CGPoint(x: width - (markingSize + markingSpacing) * 5, y: lowerBound),

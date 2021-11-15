@@ -16,6 +16,7 @@
 		4AABA7E62720E7E100FC9B75 /* AnalogWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */; };
 		4AABA7E827210CF900FC9B75 /* ColorChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E727210CF900FC9B75 /* ColorChanger.swift */; };
 		4AABA7EA2721222A00FC9B75 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E92721222A00FC9B75 /* Config.swift */; };
+		4ABB13432741BD8300E65A6F /* DowsingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB13422741BD8300E65A6F /* DowsingMachine.swift */; };
 		4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD12E6A26E98637005178D2 /* CoinToss.swift */; };
 		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
 		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
@@ -88,6 +89,7 @@
 		4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogWatch.swift; sourceTree = "<group>"; };
 		4AABA7E727210CF900FC9B75 /* ColorChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChanger.swift; sourceTree = "<group>"; };
 		4AABA7E92721222A00FC9B75 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4ABB13422741BD8300E65A6F /* DowsingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowsingMachine.swift; sourceTree = "<group>"; };
 		4AD12E6A26E98637005178D2 /* CoinToss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinToss.swift; sourceTree = "<group>"; };
 		4AD2A92B26D0B88700126756 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD2A92E26D0B88700126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				4AE7F09027404A9100459A5D /* Calculator.swift */,
 				4AE7F09227404C7000459A5D /* CalculatorButton.swift */,
 				4A42C224271F7A0E00CE870E /* Pedometer.swift */,
+				4ABB13422741BD8300E65A6F /* DowsingMachine.swift */,
 				4A48C2CF271E29CA00301A02 /* Counter.swift */,
 				4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */,
 				4AE7F0942741840700459A5D /* MarkingMap.swift */,
@@ -371,6 +374,7 @@
 				4AABA7E62720E7E100FC9B75 /* AnalogWatch.swift in Sources */,
 				4AABA7EA2721222A00FC9B75 /* Config.swift in Sources */,
 				4A5B28B62723550500F8F2A6 /* MoveTester.swift in Sources */,
+				4ABB13432741BD8300E65A6F /* DowsingMachine.swift in Sources */,
 				4AD2A94C26D0B89000126756 /* ContentView.swift in Sources */,
 				4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */,
 				4AE7F09127404A9100459A5D /* Calculator.swift in Sources */,

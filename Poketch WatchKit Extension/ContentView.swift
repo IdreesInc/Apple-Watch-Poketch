@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @State var views: [AnyView] = []
     @State var viewIndex = 0
-    @State var scrollAmount = 0.0
+    @State var scrollAmount = 1.0
     @State var touchTime: Date? = Date()
     
     var body: some View {
@@ -44,6 +44,7 @@ struct ContentView: View {
                             } else if viewIndex < 0 {
                                 viewIndex = views.count - 1
                             }
+                            scrollAmount = Double(viewIndex + 1)
                         }
                     }
                     touchTime = nil
@@ -51,7 +52,12 @@ struct ContentView: View {
         )
         .digitalCrownRotation($scrollAmount, from: 0, through: Double(views.count), by: 1.0, sensitivity: .low, isContinuous: true, isHapticFeedbackEnabled: true)
         .onChange(of: scrollAmount, perform: { value in
-            viewIndex = Int(value - 0.5)
+            print(scrollAmount)
+            if value < 0.5 {
+                viewIndex = views.count - 1
+            } else {
+                viewIndex = Int(value - 0.5)
+            }
         })
         .onAppear() {
             if views.count == 0 {
@@ -59,6 +65,7 @@ struct ContentView: View {
                 views.append(AnyView(DigitalWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Calculator().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Pedometer().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(DowsingMachine().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Counter().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(AnalogWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(CoinToss().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))

@@ -8,9 +8,24 @@
 - There is one inaccuracy left where when the app first opens it isn't meant to show a digit at all but in my case shows zero. I will keep this for now.
 - Decided to add the marking map. Despite it being kind of useless on an Apple Watch, I figured it was one of those apps that really made the Poketch what it was.
   - I did change things up a little though. I made it so that markers that are dragged to the bottom of the screen get reset, since I hated that the second you moved a marker even a little bit in the original game you could never reset it again.
-- For the first time I added persistence to the app so that the marker locations stick around even after swiping to another app. Was pretty easy actually!
-- The hard part with this app was trying to initialize the offsets of the markers to begin with. Swift makes initializing state variables messy, and in lieu of learning the right way to do it I just repeated some code like a sinner.
+  - For the first time I added persistence to the app so that the marker locations stick around even after swiping to another app. Was pretty easy actually!
+  - The hard part with this app was trying to initialize the offsets of the markers to begin with. Swift makes initializing state variables messy, and in lieu of learning the right way to do it I just repeated some code like a sinner.
 - Also made it possible to switch between apps using the digital crown. This is actually pretty responsive and should pave the way for any apps that interfere with touch in the future should I actually want to make the drawing apps later on.
+- Added dowsing machine app too, just for fun. Again this is one of those apps that basically defines the Poketch, so who am I to ignore it?
+  - It doesn't actually do anything except for "ping", but I added some haptics to make it more interesting.
+  - I had to once again be historically inaccurate and not include the border around the frame. Drawing a border around the entire watch would be very annoying as I'd have to deal with different screen sizes and all that.
+- Current list:
+  - Clock ✅
+  - Pedometer ✅
+  - Counter ✅
+  - Analog Watch ✅
+  - Coin Toss ✅
+  - Move Tester ✅
+  - Color Changer ✅
+  - Calculator ✅
+  - Marking Map ✅
+  - Dowsing Machine ✅
+  - Stopwatch
 
 ## Saturday November 13th, 2021
 
