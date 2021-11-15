@@ -14,7 +14,7 @@ struct ColorChanger: View {
     @State var sliderNotch = 0
     @State var sliderLocation = 0.0
     
-    let lizardWidth = 92.0
+    let lizardWidth = 100.0 // Original: 92px
     let sliderWidth = 152.0 // Original: 152px
     let sliderButtonWidth = 152.0 / 4.75 // Original: 32px
     let sliderNotchSize = 152.0 / 9.5 // Original: 16px

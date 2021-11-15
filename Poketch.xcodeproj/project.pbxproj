@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,10 +13,12 @@
 		4A48F8EE26E6717700D6EB3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A48F8ED26E6717700D6EB3A /* Theme.swift */; };
 		4A5B28B62723550500F8F2A6 /* MoveTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B28B52723550500F8F2A6 /* MoveTester.swift */; };
 		4A5B28BA272357CB00F8F2A6 /* TypeSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B28B9272357CB00F8F2A6 /* TypeSelect.swift */; };
+		4A6C352C2741EAFA00C7E519 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6C352B2741EAFA00C7E519 /* Dynamic */; };
 		4AABA7E62720E7E100FC9B75 /* AnalogWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E52720E7E100FC9B75 /* AnalogWatch.swift */; };
 		4AABA7E827210CF900FC9B75 /* ColorChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E727210CF900FC9B75 /* ColorChanger.swift */; };
 		4AABA7EA2721222A00FC9B75 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E92721222A00FC9B75 /* Config.swift */; };
 		4ABB13432741BD8300E65A6F /* DowsingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB13422741BD8300E65A6F /* DowsingMachine.swift */; };
+		4ACC462E2741EC61007DED91 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ACC462D2741EC61007DED91 /* Dynamic */; };
 		4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD12E6A26E98637005178D2 /* CoinToss.swift */; };
 		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
 		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
@@ -118,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6C352C2741EAFA00C7E519 /* Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ACC462E2741EC61007DED91 /* Dynamic in Frameworks */,
 				4A42C223271F79AA00CE870E /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +248,9 @@
 				4AD2A93D26D0B88D00126756 /* PBXTargetDependency */,
 			);
 			name = Poketch;
+			packageProductDependencies = (
+				4A6C352B2741EAFA00C7E519 /* Dynamic */,
+			);
 			productName = Poketch;
 			productReference = 4AD2A92B26D0B88700126756 /* Poketch.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +285,9 @@
 			dependencies = (
 			);
 			name = "Poketch WatchKit Extension";
+			packageProductDependencies = (
+				4ACC462D2741EC61007DED91 /* Dynamic */,
+			);
 			productName = "Poketch WatchKit Extension";
 			productReference = 4AD2A94626D0B89000126756 /* Poketch WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -311,6 +321,9 @@
 				Base,
 			);
 			mainGroup = 4AD2A92226D0B88600126756;
+			packageReferences = (
+				4A6C352A2741EAFA00C7E519 /* XCRemoteSwiftPackageReference "Dynamic" */,
+			);
 			productRefGroup = 4AD2A92C26D0B88700126756 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -691,6 +704,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A6C352A2741EAFA00C7E519 /* XCRemoteSwiftPackageReference "Dynamic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mhdhejazi/Dynamic.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A6C352B2741EAFA00C7E519 /* Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6C352A2741EAFA00C7E519 /* XCRemoteSwiftPackageReference "Dynamic" */;
+			productName = Dynamic;
+		};
+		4ACC462D2741EC61007DED91 /* Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6C352A2741EAFA00C7E519 /* XCRemoteSwiftPackageReference "Dynamic" */;
+			productName = Dynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4AD2A92326D0B88600126756 /* Project object */;
 }

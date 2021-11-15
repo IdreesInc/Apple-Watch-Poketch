@@ -14,8 +14,8 @@ struct MarkingMap: View {
     @State var offsets: [CGPoint]
     @State var originalOffsets: [CGPoint]
     
-    let markingMapWidth = 156.0 // 170.0
-    let markingSize = 12.0 // 10.0
+    let markingMapWidth = 156.0 // Original: 170.0
+    let markingSize = 12.0 // Original: 10.0
     let markingMargin = 20.0 // Gotta avoid that control center
     let markingSpacing = 3.0
     let lowerBound: Double
@@ -54,7 +54,7 @@ struct MarkingMap: View {
             ZStack {
                 Image("marking-map-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingMapWidth).foregroundColor(config.theme.colorB)
                 Image("marking-map-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingMapWidth).foregroundColor(config.theme.colorC)
-            }
+            }.offset(y: -8.0)
             Image("marking-map-circle").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: markingSize).foregroundColor(config.theme.colorD).offset(x: offsets[0].x, y: offsets[0].y)
                 .gesture(
                     DragGesture(minimumDistance: 0)

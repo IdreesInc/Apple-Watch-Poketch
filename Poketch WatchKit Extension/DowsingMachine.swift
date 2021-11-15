@@ -17,7 +17,7 @@ struct DowsingMachine: View {
     @State var pingLocation = CGPoint()
     @State var pingColor = 0.0
     
-    let maxPingSize = 104.0 // 96.0
+    let maxPingSize = 104.0 // Original: 96.0
     let timer = Timer.publish(every: 0.04, on: .main, in: .common).autoconnect()
     
     var body: some View {

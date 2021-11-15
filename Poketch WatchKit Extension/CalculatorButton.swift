@@ -17,9 +17,9 @@ struct CalculatorButton: View {
     var symbol: String
     var big = false
     
-    let smallButtonWidth = 30.0 // 30.0
-    let bigButtonWidth = 62.0 // 62.0
-    let pressOffset = 4.0 // 4.0
+    let smallButtonWidth = 30.0 // Original: 30.0
+    let bigButtonWidth = 62.0 // Original: 62.0
+    let pressOffset = 4.0 // Original: 4.0
     
     var body: some View {
         ZStack {

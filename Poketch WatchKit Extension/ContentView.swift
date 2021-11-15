@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Dynamic
 
 struct ContentView: View {
     @EnvironmentObject var config: Config
@@ -14,6 +15,12 @@ struct ContentView: View {
     @State var viewIndex = 0
     @State var scrollAmount = 1.0
     @State var touchTime: Date? = Date()
+    
+    init() {
+        // This is a private API and will most likely break in future updates
+        let app = Dynamic.PUICApplication.sharedPUICApplication()
+        app._setStatusBarTimeHidden(true, animated: false, completion: nil)
+    }
     
     var body: some View {
         ZStack {
@@ -61,13 +68,13 @@ struct ContentView: View {
         })
         .onAppear() {
             if views.count == 0 {
-                views.append(AnyView(MarkingMap().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(DigitalWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Calculator().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Pedometer().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(DowsingMachine().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Counter().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(AnalogWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(MarkingMap().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(CoinToss().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(MoveTester().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(ColorChanger().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))

@@ -22,7 +22,7 @@ struct Calculator: View {
     @State var lastFunction = ""
     @State var lastValue = ""
     
-    let spacing = 2.0 // 2.0
+    let spacing = 2.0 // Original: 2.0
     let maxDigits = 9
     
     func addDigit(digit: Int) {

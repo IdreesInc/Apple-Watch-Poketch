@@ -14,6 +14,7 @@
 - Added dowsing machine app too, just for fun. Again this is one of those apps that basically defines the Poketch, so who am I to ignore it?
   - It doesn't actually do anything except for "ping", but I added some haptics to make it more interesting.
   - I had to once again be historically inaccurate and not include the border around the frame. Drawing a border around the entire watch would be very annoying as I'd have to deal with different screen sizes and all that.
+- Used a private api to block the time in the status bar. This would usually get you insta-blocked during the Apps Store review but since I can't publish this app there anyways what do I have to lose!
 - Current list:
   - Clock ✅
   - Pedometer ✅
