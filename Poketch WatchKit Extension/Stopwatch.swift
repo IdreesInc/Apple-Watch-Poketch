@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Stopwatch: View {
     
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
+
     @EnvironmentObject var config: Config
     
     @State var digitOne = "0"
@@ -24,10 +26,78 @@ struct Stopwatch: View {
     @State var active = false
     @State var frame = 0
     @State var pressedFrames = 0
+    @State var datePressed: Date?
+    @State var totalTime = [0, 0, 0, 0]
     
     let digitWidth = 14.0
     let buttonWidth = 80.0 // Original: 80.0
     let timer = Timer.publish(every: 0.04, on: .main, in: .common).autoconnect()
+    
+    func updateDigits() {
+        if datePressed != nil {
+            let calendar = Calendar.current
+            let diffComponents = calendar.dateComponents([.hour, .minute, .second, .nanosecond], from: datePressed!, to: Date())
+            var hour = String(diffComponents.hour!)
+            var minutes = String(diffComponents.minute!)
+            var seconds = String(diffComponents.second!)
+            var milliseconds = String(Int(diffComponents.nanosecond!) / 10000000)
+            if hour.count == 1 {
+                hour = "0" + hour
+            }
+            if minutes.count == 1 {
+                minutes = "0" + minutes
+            }
+            if seconds.count == 1 {
+                seconds = "0" + seconds
+            }
+            if milliseconds.count == 1 {
+                milliseconds = "0" + milliseconds
+            }
+            if hour.count > 2 {
+                digitOne = "9"
+                digitTwo = "9"
+                digitThree = "9"
+                digitFour = "9"
+                digitFive = "9"
+                digitSix = "9"
+                digitSeven = "9"
+                digitEight = "9"
+            } else {
+                digitOne = String(hour.prefix(1))
+                digitTwo = String(hour.suffix(1))
+                digitThree = String(minutes.prefix(1))
+                digitFour = String(minutes.suffix(1))
+                digitFive = String(seconds.prefix(1))
+                digitSix = String(seconds.suffix(1))
+                digitSeven = String(milliseconds.prefix(1))
+                digitEight = String(milliseconds.suffix(1))
+            }
+            if isLuminanceReduced {
+                digitFive = "dash"
+                digitSix = "dash"
+                digitSeven = "dash"
+                digitEight = "dash"
+            }
+        }
+    }
+    
+    func pauseStopwatch() {
+        let calendar = Calendar.current
+        let diffComponents = calendar.dateComponents([.hour, .minute, .second, .nanosecond], from: datePressed!, to: Date())
+        totalTime[0] = diffComponents.hour!
+        totalTime[1] = diffComponents.minute!
+        totalTime[2] = diffComponents.second!
+        totalTime[3] = diffComponents.nanosecond!
+        datePressed = nil
+    }
+    
+    func unpauseStopwatch() {
+        var date = Calendar.current.date(byAdding: .hour, value: -totalTime[0], to: Date())
+        date = Calendar.current.date(byAdding: .minute, value: -totalTime[1], to: date!)
+        date = Calendar.current.date(byAdding: .second, value: -totalTime[2], to: date!)
+        date = Calendar.current.date(byAdding: .nanosecond, value: -totalTime[3], to: date!)
+        datePressed = date!
+    }
     
     var body: some View {
         ZStack {
@@ -68,14 +138,14 @@ struct Stopwatch: View {
                             Image("counter-digit-" + digitSeven + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: digitWidth).foregroundColor(config.theme.colorD)
                         }
                         ZStack {
-                            Image("counter-digit-" + digitSeven + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: digitWidth).foregroundColor(config.theme.colorB)
-                            Image("counter-digit-" + digitSeven + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: digitWidth).foregroundColor(config.theme.colorD)
+                            Image("counter-digit-" + digitEight + "-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: digitWidth).foregroundColor(config.theme.colorB)
+                            Image("counter-digit-" + digitEight + "-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: digitWidth).foregroundColor(config.theme.colorD)
                         }
                     }
                 }
                 ZStack {
                     ZStack {
-                        let activeFrame = (frame / 2) % 2 + 1
+                        let activeFrame = isLuminanceReduced ? 1 : (frame / 2) % 2 + 1
                         if !buttonPressed {
                             if !active {
                                 Image("stopwatch-blank-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
@@ -98,7 +168,7 @@ struct Stopwatch: View {
                                 Image("stopwatch-pressed-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
                             }
                         }
-                        Image("stopwatch-highlight-\(activeFrame)").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 92.0).foregroundColor(config.theme.colorB).opacity(active && !buttonPressed ? 1.0 : 0.0)
+                        Image("stopwatch-highlight-\(activeFrame)").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 92.0).foregroundColor(config.theme.colorB).opacity(active && !buttonPressed && !isLuminanceReduced ? 1.0 : 0.0)
                     }
                     .gesture(
                         DragGesture(minimumDistance: 0)
@@ -108,6 +178,11 @@ struct Stopwatch: View {
                             .onEnded({ touch in
                                 buttonPressed = false
                                 active = !active
+                                if active {
+                                    unpauseStopwatch()
+                                } else {
+                                    pauseStopwatch()
+                                }
                             })
                     )
                 }.offset(y: 15.0)
@@ -120,6 +195,7 @@ struct Stopwatch: View {
             } else {
                 pressedFrames = 0
             }
+            updateDigits()
         }
     }
 }

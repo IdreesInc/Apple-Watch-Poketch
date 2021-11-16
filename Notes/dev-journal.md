@@ -1,5 +1,10 @@
 # Dev Journal
 
+# Tuesday November 16th, 2021
+
+- Added the ability to start and stop the stopwatch.
+- Decided to hide the seconds and milliseconds digits when the screen is not actively being held up to save battery. The high number of timer calls however is probably still not great for battery life, but it is the only way to accurately recreate the look and feel.
+
 # Monday November 15th, 2021
 
 - Added icons and complications to the app for easy access.
