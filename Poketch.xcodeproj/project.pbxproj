@@ -19,6 +19,7 @@
 		4AABA7EA2721222A00FC9B75 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA7E92721222A00FC9B75 /* Config.swift */; };
 		4ABB13432741BD8300E65A6F /* DowsingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB13422741BD8300E65A6F /* DowsingMachine.swift */; };
 		4ACC462E2741EC61007DED91 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ACC462D2741EC61007DED91 /* Dynamic */; };
+		4ACC46302743196E007DED91 /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC462F2743196E007DED91 /* Complication.swift */; };
 		4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD12E6A26E98637005178D2 /* CoinToss.swift */; };
 		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
 		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
@@ -92,6 +93,7 @@
 		4AABA7E727210CF900FC9B75 /* ColorChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChanger.swift; sourceTree = "<group>"; };
 		4AABA7E92721222A00FC9B75 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4ABB13422741BD8300E65A6F /* DowsingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowsingMachine.swift; sourceTree = "<group>"; };
+		4ACC462F2743196E007DED91 /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
 		4AD12E6A26E98637005178D2 /* CoinToss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinToss.swift; sourceTree = "<group>"; };
 		4AD2A92B26D0B88700126756 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD2A92E26D0B88700126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				4AD2A94D26D0B89000126756 /* PoketchApp.swift */,
 				4A48F8ED26E6717700D6EB3A /* Theme.swift */,
 				4AABA7E92721222A00FC9B75 /* Config.swift */,
+				4ACC462F2743196E007DED91 /* Complication.swift */,
 				4AD2A94F26D0B89000126756 /* ComplicationController.swift */,
 				4AD2A95126D0B89200126756 /* Assets.xcassets */,
 				4AD2A95626D0B89200126756 /* Info.plist */,
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AABA7E827210CF900FC9B75 /* ColorChanger.swift in Sources */,
+				4ACC46302743196E007DED91 /* Complication.swift in Sources */,
 				4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */,
 				4AE7F0952741840700459A5D /* MarkingMap.swift in Sources */,
 				4A5B28BA272357CB00F8F2A6 /* TypeSelect.swift in Sources */,
@@ -540,7 +544,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreesinc.Poketch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -565,7 +569,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreesinc.Poketch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -586,7 +590,7 @@
 				DEVELOPMENT_TEAM = 4QHN4728NU;
 				IBSC_MODULE = Poketch_WatchKit_Extension;
 				INFOPLIST_FILE = "Poketch WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreesinc.Poketch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -606,7 +610,7 @@
 				DEVELOPMENT_TEAM = 4QHN4728NU;
 				IBSC_MODULE = Poketch_WatchKit_Extension;
 				INFOPLIST_FILE = "Poketch WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreesinc.Poketch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -632,7 +636,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreesinc.Poketch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -655,7 +659,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idreeshassan.Poketch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idreesinc.Poketch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
