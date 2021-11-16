@@ -20,6 +20,7 @@
 		4ABB13432741BD8300E65A6F /* DowsingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB13422741BD8300E65A6F /* DowsingMachine.swift */; };
 		4ACC462E2741EC61007DED91 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ACC462D2741EC61007DED91 /* Dynamic */; };
 		4ACC46302743196E007DED91 /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC462F2743196E007DED91 /* Complication.swift */; };
+		4ACC463227436575007DED91 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC463127436575007DED91 /* Stopwatch.swift */; };
 		4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD12E6A26E98637005178D2 /* CoinToss.swift */; };
 		4AD2A92F26D0B88700126756 /* PoketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A92E26D0B88700126756 /* PoketchApp.swift */; };
 		4AD2A93126D0B88700126756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2A93026D0B88700126756 /* ContentView.swift */; };
@@ -94,6 +95,7 @@
 		4AABA7E92721222A00FC9B75 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4ABB13422741BD8300E65A6F /* DowsingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowsingMachine.swift; sourceTree = "<group>"; };
 		4ACC462F2743196E007DED91 /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
+		4ACC463127436575007DED91 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		4AD12E6A26E98637005178D2 /* CoinToss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinToss.swift; sourceTree = "<group>"; };
 		4AD2A92B26D0B88700126756 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD2A92E26D0B88700126756 /* PoketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketchApp.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				4AD12E6A26E98637005178D2 /* CoinToss.swift */,
 				4A5B28B52723550500F8F2A6 /* MoveTester.swift */,
 				4A5B28B9272357CB00F8F2A6 /* TypeSelect.swift */,
+				4ACC463127436575007DED91 /* Stopwatch.swift */,
 				4AABA7E727210CF900FC9B75 /* ColorChanger.swift */,
 				4AD2A94B26D0B89000126756 /* ContentView.swift */,
 				4AD2A94D26D0B89000126756 /* PoketchApp.swift */,
@@ -383,6 +386,7 @@
 			files = (
 				4AABA7E827210CF900FC9B75 /* ColorChanger.swift in Sources */,
 				4ACC46302743196E007DED91 /* Complication.swift in Sources */,
+				4ACC463227436575007DED91 /* Stopwatch.swift in Sources */,
 				4AD12E6B26E98637005178D2 /* CoinToss.swift in Sources */,
 				4AE7F0952741840700459A5D /* MarkingMap.swift in Sources */,
 				4A5B28BA272357CB00F8F2A6 /* TypeSelect.swift in Sources */,

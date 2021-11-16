@@ -68,6 +68,7 @@ struct ContentView: View {
         })
         .onAppear() {
             if views.count == 0 {
+                views.append(AnyView(Stopwatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(DigitalWatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Calculator().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(Pedometer().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))

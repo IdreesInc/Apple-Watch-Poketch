@@ -1,5 +1,13 @@
 # Dev Journal
 
+# Monday November 15th, 2021
+
+- Added icons and complications to the app for easy access.
+- Renamed the package identifier to point to my main domain, just in case.
+- Begin work on adding the Voltorb stopwatch app.
+  - This app has some pretty involved animations, but I really want to try and get it done before I finish the app and video tomorrow! It's my last app before I release the Poketch, and I wanted it to be something special.
+  - Technically this app was never even released on the Poketch, but it's still my favorite so I'm gonna add it anyway.
+
 ## Sunday November 14th, 2021
 
 - Completed calculator, turns out I had to do some weird hacks to get everything looking the same as it did on the OG Poketch.
