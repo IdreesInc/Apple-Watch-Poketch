@@ -32,6 +32,6 @@ All kinds!
 
 ![](/Resources/device-screenshots/simulator-screenshot-color-changer-green.png)
 
-![](/Resources/device-screenshots/simulator-screenshot-stopwatch.png)
+![](/Resources/device-screenshots/simulator-screenshot-color-changer-stopwatch.png)
 
 I added the apps that seemed to make the most sense on an Apple Watch, as well as some of my favorites that gave the original Poketch its charm. If you want to see the project running, check out my video [here](https://www.youtube.com/watch?v=EW62MN3cy_k).
