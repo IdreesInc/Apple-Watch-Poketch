@@ -8,6 +8,14 @@ Check out the YouTube video [here](https://www.youtube.com/watch?v=EW62MN3cy_k) 
 
 _Notice: "Poketch", "Pokemon", and the assets used in this project are soley owned by the Pokémon Company, Game Freak, and Nintendo. As such, the license for this project does not apply to assets in this repository owned by the aforementioned companies._
 
+## What devices can I run this on?
+
+The only real limitation is screen size. Any full-screen Apple Watch should work (4 or above), though I haven't tested it on the Series 3. Feel free to give it a shot and report back how it goes! I'd imagine that simple apps like the digital watch should fit but more complex apps like the calculator will have elements cut off.
+
+## How do I put this on my Apple Watch?
+
+By sideloading! This is a pretty complicated and involved process that will probably only make sense if you're a developer, but [here's](https://developer.apple.com/documentation/xcode/running-your-app-in-the-simulator-or-on-a-device) Apple's documentation on running custom apps on your devices using Xcode.
+
 ## What apps does it have?
 
 All kinds!
