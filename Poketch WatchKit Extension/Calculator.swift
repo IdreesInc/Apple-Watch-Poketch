@@ -68,6 +68,9 @@ struct Calculator: View {
     }
     
     func calculate() {
+        if overflow {
+            return
+        }
         if !lastFunction.isEmpty && selectedFunction == "empty" {
             selectedFunction = lastFunction
             previousValue = Decimal(string: currentValue)!

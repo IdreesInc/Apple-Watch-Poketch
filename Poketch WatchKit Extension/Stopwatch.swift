@@ -205,14 +205,14 @@ struct Stopwatch: View {
                     ZStack {
                         let opacity = pressedFrames >= 60 + 9 * 8  && pressedFrames <  132 + 6 * 8 ? 1.0 : 0.0
 //                        let opacity = 1.0
-                        let pressedAnimationFrame = pressedFrames % 6 / 3 + 1
+                        let pressedAnimationFrame = pressedFrames % 6 / 2 + 1
 
                         Image("stopwatch-explosion-\(pressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: 20.0, y: 28.0).opacity(opacity)
                         Image("stopwatch-explosion-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: 20.0, y: 28.0).opacity(opacity)
                         Image("stopwatch-explosion-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: 20.0, y: 28.0).opacity(opacity)
                         Image("stopwatch-explosion-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: 20.0, y: 28.0).opacity(opacity)
                         
-                        let pressedAnimationFrame = (pressedFrames + 2) % 6 / 3 + 1
+                        let pressedAnimationFrame = (pressedFrames + 2) % 6 / 2 + 1
 
                         Image("stopwatch-explosion-\(pressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: -28.0, y: -18.0).opacity(opacity)
                         Image("stopwatch-explosion-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: -28.0, y: -18.0).opacity(opacity)
@@ -225,9 +225,10 @@ struct Stopwatch: View {
                 .onChange(of: pressedFrames, perform: { value in
                     if value == 60 {
                         angryBall = true
+                    } else if value == 180 {
+                        clearStopwatch()
                     } else if value == 236 {
                         angryBall = false
-                        clearStopwatch()
                     }
                 })
                 .gesture(

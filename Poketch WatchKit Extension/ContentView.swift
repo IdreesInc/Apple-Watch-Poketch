@@ -77,8 +77,8 @@ struct ContentView: View {
                 views.append(AnyView(MarkingMap().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(CoinToss().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(MoveTester().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
-                views.append(AnyView(Stopwatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
                 views.append(AnyView(ColorChanger().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
+                views.append(AnyView(Stopwatch().environmentObject(config).ignoresSafeArea(.all).navigationBarHidden(true)))
             }
         }
     }
