@@ -24,4 +24,4 @@ I added the apps that seemed to make the most sense on an Apple Watch, as well a
 
 To learn more and see it in action, click here!
 
-_Notice: "Poketch", "Pokemon", and the assets used in this project are soley owned by the Pokémon Company, Game Freak, and Nintendo. As such, the license for this project does not apply to the assets in this repository._
+_Notice: "Poketch", "Pokemon", and the assets used in this project are soley owned by the Pokémon Company, Game Freak, and Nintendo. As such, the license for this project does not apply to assets in this repository owned by the aforementioned companies._
