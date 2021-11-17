@@ -32,7 +32,7 @@ All kinds!
 
 ![](/Resources/device-screenshots/simulator-screenshot-move-tester.png)
 
-![](/Resources/device-screenshots/simulator-screenshot-color-changer.png)
+![](/Resources/device-screenshots/simulator-screenshot-color-changer-green.png)
 
 ![](/Resources/device-screenshots/simulator-screenshot-stopwatch.png)
 
