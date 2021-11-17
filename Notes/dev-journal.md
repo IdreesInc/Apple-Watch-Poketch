@@ -4,6 +4,8 @@
 
 - Added the ability to start and stop the stopwatch.
 - Decided to hide the seconds and milliseconds digits when the screen is not actively being held up to save battery. The high number of timer calls however is probably still not great for battery life, but it is the only way to accurately recreate the look and feel.
+- Just fought Xcode tooth and nail to get it to stop trying to use all of my SSD as swap space for the swift frontend and sourcekit processes. Looks like there are some limits to nested stacks or adjacent stacks, preventing me from creating the explosion sprites that I wanted to. So if you are wondering why there's only two, blame Xcode.
+- And that's a wrap! With the code done, now I just need to create a readme and make my YouTube video!
 
 # Monday November 15th, 2021
 

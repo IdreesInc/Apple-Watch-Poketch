@@ -27,10 +27,12 @@ struct Stopwatch: View {
     @State var frame = 0
     @State var pressedFrames = 0
     @State var datePressed: Date?
-    @State var totalTime = [0, 0, 0, 0]
+    @State var previousTime = [0, 0, 0, 0]
+    @State var angryBall = false
     
     let digitWidth = 14.0
     let buttonWidth = 80.0 // Original: 80.0
+    let explosionWidth = 52.0 // Original: 52.0
     let timer = Timer.publish(every: 0.04, on: .main, in: .common).autoconnect()
     
     func updateDigits() {
@@ -83,20 +85,37 @@ struct Stopwatch: View {
     
     func pauseStopwatch() {
         let calendar = Calendar.current
-        let diffComponents = calendar.dateComponents([.hour, .minute, .second, .nanosecond], from: datePressed!, to: Date())
-        totalTime[0] = diffComponents.hour!
-        totalTime[1] = diffComponents.minute!
-        totalTime[2] = diffComponents.second!
-        totalTime[3] = diffComponents.nanosecond!
-        datePressed = nil
+        if datePressed != nil {
+            let diffComponents = calendar.dateComponents([.hour, .minute, .second, .nanosecond], from: datePressed!, to: Date())
+            previousTime[0] = diffComponents.hour!
+            previousTime[1] = diffComponents.minute!
+            previousTime[2] = diffComponents.second!
+            previousTime[3] = diffComponents.nanosecond!
+            datePressed = nil
+        }
     }
     
     func unpauseStopwatch() {
-        var date = Calendar.current.date(byAdding: .hour, value: -totalTime[0], to: Date())
-        date = Calendar.current.date(byAdding: .minute, value: -totalTime[1], to: date!)
-        date = Calendar.current.date(byAdding: .second, value: -totalTime[2], to: date!)
-        date = Calendar.current.date(byAdding: .nanosecond, value: -totalTime[3], to: date!)
+        var date = Calendar.current.date(byAdding: .hour, value: -previousTime[0], to: Date())
+        date = Calendar.current.date(byAdding: .minute, value: -previousTime[1], to: date!)
+        date = Calendar.current.date(byAdding: .second, value: -previousTime[2], to: date!)
+        date = Calendar.current.date(byAdding: .nanosecond, value: -previousTime[3], to: date!)
         datePressed = date!
+    }
+    
+    func clearStopwatch() {
+        datePressed = nil
+        active = false
+        buttonPressed = false
+        previousTime = [0, 0, 0, 0]
+        digitOne = "0"
+        digitTwo = "0"
+        digitThree = "0"
+        digitFour = "0"
+        digitFive = "0"
+        digitSix = "0"
+        digitSeven = "0"
+        digitEight = "0"
     }
     
     var body: some View {
@@ -144,53 +163,96 @@ struct Stopwatch: View {
                     }
                 }
                 ZStack {
-                    ZStack {
-                        let activeFrame = isLuminanceReduced ? 1 : (frame / 2) % 2 + 1
-                        if !buttonPressed {
-                            if !active {
-                                Image("stopwatch-blank-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
-                                Image("stopwatch-blank-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
-                                Image("stopwatch-blank-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
-                            } else {
-                                Image("stopwatch-active-\(activeFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
-                                Image("stopwatch-active-\(activeFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
-                                Image("stopwatch-active-\(activeFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
-                            }
+                    let activeFrame = isLuminanceReduced ? 1 : (frame / 2) % 2 + 1
+                    if !buttonPressed && !angryBall {
+                        if !active {
+                            Image("stopwatch-blank-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-blank-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-blank-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
                         } else {
-                            if pressedFrames < 15 {
-                                Image("stopwatch-pressed-1-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
-                                Image("stopwatch-pressed-1-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
-                                Image("stopwatch-pressed-1-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
-                            } else {
-                                let pressedAnimationFrame = pressedFrames % 15 / 5 + 2
-                                Image("stopwatch-pressed-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
-                                Image("stopwatch-pressed-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
-                                Image("stopwatch-pressed-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
-                            }
+                            Image("stopwatch-active-\(activeFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-active-\(activeFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-active-\(activeFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
                         }
-                        Image("stopwatch-highlight-\(activeFrame)").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 92.0).foregroundColor(config.theme.colorB).opacity(active && !buttonPressed && !isLuminanceReduced ? 1.0 : 0.0)
+                    } else {
+                        if pressedFrames < 15 {
+                            Image("stopwatch-pressed-1-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-pressed-1-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-pressed-1-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
+                        } else if pressedFrames < 60 {
+                            let pressedAnimationFrame = pressedFrames % 15 / 5 + 2
+                            Image("stopwatch-pressed-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-pressed-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-pressed-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
+                        } else if pressedFrames <= 60 + 9 * 8 {
+                            let pressedAnimationFrame = (pressedFrames + 3) % 9 / 3 + 2
+                            Image("stopwatch-pressed-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-pressed-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-pressed-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
+                        } else if pressedFrames <= 132 + 6 * 8 {
+                            let pressedAnimationFrame = pressedFrames % 6 / 3 + 1
+                            Image("stopwatch-exploding-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-exploding-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-exploding-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
+                        } else {
+                            let pressedAnimationFrame = (pressedFrames + 1) % 14 / 7 + 1
+                            Image("stopwatch-blink-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorB)
+                            Image("stopwatch-blink-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorC)
+                            Image("stopwatch-blink-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: buttonWidth).foregroundColor(config.theme.colorD)
+                        }
                     }
-                    .gesture(
-                        DragGesture(minimumDistance: 0)
-                            .onChanged({ touch in
-                                buttonPressed = true
-                            })
-                            .onEnded({ touch in
-                                buttonPressed = false
+                    Image("stopwatch-highlight-\(activeFrame)").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 92.0).foregroundColor(config.theme.colorB).opacity(active && !buttonPressed && !isLuminanceReduced && !angryBall ? 1.0 : 0.0)
+                    ZStack {
+                        let opacity = pressedFrames >= 60 + 9 * 8  && pressedFrames <  132 + 6 * 8 ? 1.0 : 0.0
+//                        let opacity = 1.0
+                        let pressedAnimationFrame = pressedFrames % 6 / 3 + 1
+
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        
+                        let pressedAnimationFrame = (pressedFrames + 2) % 6 / 3 + 1
+
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        
+                    }
+                }
+                .offset(y: 15.0)
+                .onChange(of: pressedFrames, perform: { value in
+                    if value == 60 {
+                        angryBall = true
+                    } else if value == 236 {
+                        angryBall = false
+                        clearStopwatch()
+                    }
+                })
+                .gesture(
+                    DragGesture(minimumDistance: 0)
+                        .onChanged({ touch in
+                            buttonPressed = true
+                            if active {
+                                pauseStopwatch()
+                            }
+                        })
+                        .onEnded({ touch in
+                            buttonPressed = false
+                            if !angryBall {
                                 active = !active
                                 if active {
                                     unpauseStopwatch()
-                                } else {
-                                    pauseStopwatch()
                                 }
-                            })
-                    )
-                }.offset(y: 15.0)
+                            }
+                        })
+                )
             }
         }
         .onReceive(timer) { _ in
             frame += 1
-            if buttonPressed {
+            if buttonPressed || angryBall {
                 pressedFrames += 1
             } else {
                 pressedFrames = 0
