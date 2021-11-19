@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Poketch.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>2</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>1EE68AE3EF6F29C968D208134D9A9F7C9F44AB59</string>
+				<key>dateExpires</key>
+				<string>11/14/22</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7k</string>
+						<string>arm64_32</string>
+					</array>
+					<key>buildNumber</key>
+					<string>2</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>1EE68AE3EF6F29C968D208134D9A9F7C9F44AB59</string>
+						<key>dateExpires</key>
+						<string>11/14/22</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>embeddedBinaries</key>
+					<array>
+						<dict>
+							<key>architectures</key>
+							<array>
+								<string>armv7k</string>
+								<string>arm64_32</string>
+							</array>
+							<key>buildNumber</key>
+							<string>2</string>
+							<key>certificate</key>
+							<dict>
+								<key>SHA1</key>
+								<string>1EE68AE3EF6F29C968D208134D9A9F7C9F44AB59</string>
+								<key>dateExpires</key>
+								<string>11/14/22</string>
+								<key>type</key>
+								<string>Apple Development</string>
+							</dict>
+							<key>entitlements</key>
+							<dict>
+								<key>application-identifier</key>
+								<string>4QHN4728NU.com.idreesinc.poketch.release.watchkitapp.watchkitextension</string>
+								<key>com.apple.developer.healthkit</key>
+								<true/>
+								<key>com.apple.developer.healthkit.access</key>
+								<array/>
+								<key>com.apple.developer.team-identifier</key>
+								<string>4QHN4728NU</string>
+								<key>get-task-allow</key>
+								<true/>
+							</dict>
+							<key>name</key>
+							<string>Poketch WatchKit Extension.appex</string>
+							<key>profile</key>
+							<dict>
+								<key>UUID</key>
+								<string>05a8a08c-9212-466b-b6d2-b8ab62e969cb</string>
+								<key>dateExpires</key>
+								<string>11/18/22</string>
+								<key>name</key>
+								<string>iOS Team Provisioning Profile: com.idreesinc.poketch.release.watchkitapp.watchkitextension</string>
+							</dict>
+							<key>team</key>
+							<dict>
+								<key>id</key>
+								<string>4QHN4728NU</string>
+								<key>name</key>
+								<string>Idrees Hassan</string>
+							</dict>
+							<key>versionNumber</key>
+							<string>1.1</string>
+						</dict>
+					</array>
+					<key>entitlements</key>
+					<dict>
+						<key>application-identifier</key>
+						<string>4QHN4728NU.com.idreesinc.poketch.release.watchkitapp</string>
+						<key>com.apple.developer.team-identifier</key>
+						<string>4QHN4728NU</string>
+						<key>get-task-allow</key>
+						<true/>
+						<key>keychain-access-groups</key>
+						<array>
+							<string>4QHN4728NU.com.idreesinc.poketch.release.watchkitapp</string>
+						</array>
+					</dict>
+					<key>name</key>
+					<string>Poketch WatchKit App.app</string>
+					<key>profile</key>
+					<dict>
+						<key>UUID</key>
+						<string>54dd3834-fbfe-4fef-838f-95fc48ecc1e7</string>
+						<key>dateExpires</key>
+						<string>11/14/22</string>
+						<key>name</key>
+						<string>iOS Team Provisioning Profile: *</string>
+					</dict>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>4QHN4728NU</string>
+						<key>name</key>
+						<string>Idrees Hassan</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.1</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>4QHN4728NU.com.idreesinc.poketch.release</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>4QHN4728NU</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>4QHN4728NU.com.idreesinc.poketch.release</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>Poketch.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>54dd3834-fbfe-4fef-838f-95fc48ecc1e7</string>
+				<key>dateExpires</key>
+				<string>11/14/22</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>4QHN4728NU</string>
+				<key>name</key>
+				<string>Idrees Hassan</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.1</string>
+		</dict>
+	</array>
+</dict>
+</plist>
