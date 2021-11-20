@@ -16,6 +16,10 @@ The only real limitation is screen size. Any full-screen Apple Watch should work
 
 By sideloading! This is a pretty complicated and involved process that will probably only make sense if you're a developer, but [here's](https://developer.apple.com/documentation/xcode/running-your-app-in-the-simulator-or-on-a-device) Apple's documentation on running custom apps on your devices using Xcode.
 
+## Will this be posted to the App Store?
+
+Nope, this is a fan project of some fantastic games and I am in no position to publish this to the App Store as my own creation. Hopefully this will inspire an official Poketch app to be developed for smart watches at some point!
+
 ## What apps does it have?
 
 All kinds!
