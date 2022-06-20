@@ -6,7 +6,9 @@ It's an Apple Watch remake of the "Poketch" from Pokemon Diamond and Pearl made 
 
 Check out the YouTube video [here](https://www.youtube.com/watch?v=EW62MN3cy_k) to see it in action!
 
-_Notice: "Poketch", "Pokemon", and the assets used in this project are soley owned by the Pokémon Company, Game Freak, and Nintendo. As such, the license for this project does not apply to assets in this repository owned by the aforementioned companies._
+![](https://idreesinc.com/images/poketch/poketch-on-wrist.png)
+
+_Notice: "Poketch", "Pokemon", and the assets used in this project are solely owned by the Pokémon Company, Game Freak, and Nintendo. As such, the license for this project does not apply to assets in this repository owned by the aforementioned companies._
 
 ## What devices can I run this on?
 
