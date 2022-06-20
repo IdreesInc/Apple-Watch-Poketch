@@ -204,20 +204,18 @@ struct Stopwatch: View {
                     Image("stopwatch-highlight-\(activeFrame)").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: 92.0).foregroundColor(config.theme.colorB).opacity(active && !buttonPressed && !isLuminanceReduced && !angryBall ? 1.0 : 0.0)
                     ZStack {
                         let opacity = pressedFrames >= 60 + 9 * 8  && pressedFrames <  132 + 6 * 8 ? 1.0 : 0.0
-//                        let opacity = 1.0
-                        let pressedAnimationFrame = pressedFrames % 6 / 2 + 1
-
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: 20.0, y: 28.0).opacity(opacity)
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: 20.0, y: 28.0).opacity(opacity)
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: 20.0, y: 28.0).opacity(opacity)
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: 20.0, y: 28.0).opacity(opacity)
                         
-                        let pressedAnimationFrame = (pressedFrames + 2) % 6 / 2 + 1
-
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: -28.0, y: -18.0).opacity(opacity)
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: -28.0, y: -18.0).opacity(opacity)
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: -28.0, y: -18.0).opacity(opacity)
-                        Image("stopwatch-explosion-\(pressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        let firstPressedAnimationFrame = pressedFrames % 6 / 2 + 1
+                        Image("stopwatch-explosion-\(firstPressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(firstPressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(firstPressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(firstPressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: 20.0, y: 28.0).opacity(opacity)
+                        
+                        let secondPressedAnimationFrame = (pressedFrames + 2) % 6 / 2 + 1
+                        Image("stopwatch-explosion-\(secondPressedAnimationFrame)-a").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorA).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(secondPressedAnimationFrame)-b").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorB).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(secondPressedAnimationFrame)-c").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorC).offset(x: -28.0, y: -18.0).opacity(opacity)
+                        Image("stopwatch-explosion-\(secondPressedAnimationFrame)-d").renderingMode(.template).interpolation(.none).resizable().aspectRatio(contentMode: .fit).frame(width: explosionWidth).foregroundColor(config.theme.colorD).offset(x: -28.0, y: -18.0).opacity(opacity)
                         
                     }
                 }
