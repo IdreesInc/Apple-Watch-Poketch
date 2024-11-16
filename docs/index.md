@@ -1,5 +1,6 @@
 ---
-title: "Apple Watch Poketch"
+window_title: "Apple Watch Pokétch"
+title: "Apple Watch Pokétch"
 subtitle: "the pokétch from pokémon, now on your wrist"
 # annotation: "*plus, it has ligatures!"
 source_code: "https://github.com/IdreesInc/Apple-Watch-Poketch"
