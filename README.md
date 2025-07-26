@@ -1,5 +1,9 @@
 # Apple Watch Poketch
 
+<a href="https://discord.gg/6yxE9prcNc" target="_blank">
+	<img alt="Discord" src="https://img.shields.io/discord/1398471368403583120?logo=discord&logoColor=fff&label=discord&color=5865F2">
+</a>
+
 ## What is it?
 
 It's an Apple Watch remake of the "Poketch" from Pokemon Diamond and Pearl made with SwiftUI!
